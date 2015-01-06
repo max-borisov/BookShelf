@@ -17,6 +17,7 @@ Book.create!([
       price: 12.12,
       rating: 4,
       isbn: 111223331,
+      amazon_id: '1941222196',
   },
   {
       title: 'PHP',
@@ -26,6 +27,7 @@ Book.create!([
       price: 12.12,
       rating: 4,
       isbn: 111223331,
+      amazon_id: '1617291692',
   },
   {
       title: 'NodeJS',
@@ -35,6 +37,7 @@ Book.create!([
       price: 12.12,
       rating: 4,
       isbn: 111223331,
+      amazon_id: '0321944275',
   },
 ])
 
