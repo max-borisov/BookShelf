@@ -1,39 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Pub date:</strong>
-  <%= @book.pub_date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @book.price %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @book.rating %>
-</p>
-
-<p>
-  <strong>Isbn:</strong>
-  <%= @book.isbn %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<div class="row">
+  <div class="col-md-3 book-cover-lg">
+    <%= amazon_book_cover(@book.amazon_id, @book.title) %>
+  </div>
+  <div class="col-md-7">
+    <h1><%= h(@book.title) %></h1>
+    <div>by <strong><%= h(@book.author) %></strong> (author)</div>
+    <div>ISBN: <%= @book.isbn %></div>
+    <div>Publisher: <%= h(@book.publisher) %></div>
+    <div>Publisher: <%= @book.pub_date %></div>
+    <div>Rating: <%= @book.rating %></div>
+    <div>Description: <%= h(@book.description) %></div>
+  </div>
+  <div class="col-md-2">
+      <p class="text-center price-box">$<%= @book.price %></p>
+      <p class="text-center"><%= link_to 'Add to Cart', '#', class: 'btn btn-md btn-primary add-to-cart-btn' %></p>
+  </div>
+</div>

@@ -1,11 +1,12 @@
 <div class="row">
   <div class="col-md-2 book-cover">
-    <a href="#"><%= amazon_book_cover(book.amazon_id, h(book.title)) %></a>
+    <%= link_to amazon_book_cover(book.amazon_id, h(book.title)), book_path(book), title: h(book.title) %>
   </div>
   <div class="col-md-8">
-    <h2><%= html_escape book.title %></h2>
+    <h2><%= link_to h(book.title), book_path(book), title: h(book.title) %></h2>
     <h5>by <%= h(book.author) %> (Author)</h5>
     <p>ISBN-10: <%= book.isbn %></p>
+    <p>Publisher: <%= h(book.publisher) %></p>
     <p>Published: <%= Date.parse(book.pub_date.to_s).strftime('%b %d, %Y') %></p>
     <p>Rating: <%= book.rating + '/5' %></p>
     <p><%= h(book.description) %></p>

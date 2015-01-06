@@ -18,6 +18,7 @@ Book.create!([
       rating: 4,
       isbn: 111223331,
       amazon_id: '1941222196',
+      publisher: 'Pragmatic Bookshelf',
   },
   {
       title: 'PHP',
@@ -28,6 +29,7 @@ Book.create!([
       rating: 4,
       isbn: 111223331,
       amazon_id: '1617291692',
+      publisher: 'Addison-Wesley Professional',
   },
   {
       title: 'NodeJS',
@@ -38,6 +40,7 @@ Book.create!([
       rating: 4,
       isbn: 111223331,
       amazon_id: '0321944275',
+      publisher: 'Manning Publications',
   },
 ])
 
