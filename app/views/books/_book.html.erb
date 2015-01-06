@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-2">
+    <a href="#"><img src="http://placehold.it/150x200" alt="<%= html_escape book.title %>"></a>
+  </div>
+  <div class="col-md-8">
+    <h2><%= html_escape book.title %></h2>
+    <h5>by <%= html_escape book.author %> (Author)</h5>
+    <p>ISBN-10: <%= book.isbn %></p>
+    <p>Published: <%= Date.parse(book.pub_date.to_s).strftime('%b %d, %Y') %></p>
+    <p>Rating: <%= book.rating + '/5' %></p>
+    <p><%= html_escape book.description %></p>
+  </div>
+  <div class="col-md-2">
+    <p class="price-box text-center">$<%= book.price %></p>
+    <p class="text-center"><a href="#" class="btn btn-md btn-primary add-to-cart-btn">Add to cart</a></p>
+  </div>
+</div>
+
+<hr>
