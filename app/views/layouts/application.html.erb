@@ -43,16 +43,20 @@
         <ul class="nav navbar-nav navbar-right">
           <!--<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>-->
           <!--<li><a href="../navbar-static-top/">Static top</a></li>-->
-          <li>
-            <%= link_to 'Sign in', signin_path %>
-          </li>
-          <li>
-            <a href="#">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-              &nbsp;
-              <span class="badge">42</span>
-            </a>
-          </li>
+          <% if logged_in? %>
+              <li>
+                <a href="#">
+                  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                  &nbsp;
+                  <span class="badge">42</span>
+                </a>
+              </li>
+              <li><%= link_to 'Log out', logout_path, method: :delete%></li>
+          <% else %>
+            <li>
+                <%= link_to('Sign in', signin_path) unless logged_in? %>
+            </li>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
