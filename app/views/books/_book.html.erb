@@ -12,8 +12,8 @@
     <p><%= h(book.description) %></p>
   </div>
   <div class="col-md-2">
-    <p class="price-box text-center">$<%= book.price %></p>
-    <p class="text-center"><a href="#" class="btn btn-md btn-primary add-to-cart-btn">Add to cart</a></p>
+    <p class="price-box text-center"><%= number_to_currency book.price %></p>
+    <%= content_tag(:div, link_to('Add to cart', '#', class: 'btn btn-md btn-primary add-to-cart-btn'), class: 'text-center') if logged_in? %>
   </div>
 </div>
 
