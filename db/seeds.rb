@@ -37,7 +37,7 @@ Book.create!([
       pub_date: '12/12/2014',
       description: 'Cool book',
       price: 12.12,
-      rating: 4,
+      rating: nil,
       isbn: 111223331,
       amazon_id: '0321944275',
       publisher: 'Manning Publications',
