@@ -4,42 +4,32 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@user, html: { class: '', role: 'form' }) do |f| %>
-        <% if @user.errors.any? %>
-            <div id="error_explanation">
-              <!--<h2><%#= pluralize(@user.errors.count, "error") %> prohibited this book from being saved:</h2>-->
-              <ul>
-                <% @user.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-              </ul>
+
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
             </div>
-        <% end %>
 
-        <div class="form-group">
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
-        </div>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
 
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.text_field :email, class: 'form-control' %>
-        </div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
 
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
+            <div class="form-group">
+              <%= f.label :password_confirmation, 'Confirmation' %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
 
-        <div class="form-group">
-          <%= f.label :password_confirmation, 'Confirmation' %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
-        </div>
+            <div>
+              <%= f.submit 'Create account', class: 'btn btn-lg btn-primary btn-block' %>
+            </div>
 
-        <div>
-          <%= f.submit 'Create account', class: 'btn btn-lg btn-primary btn-block' %>
-        </div>
-
-        <%= render partial: 'shared/form_footer', locals: { text: link_to('Sign in', signin_path) + ', if you already have account.' } %>
+            <%= render partial: 'shared/form_footer', locals: { text: link_to('Sign in', signin_path) + ', if you already have account.' } %>
 
         <% end %>
     </div>
