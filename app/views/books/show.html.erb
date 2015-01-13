@@ -1,6 +1,8 @@
 <div class="row">
+  <%= render partial: 'shared/back_button', locals: { link: books_path() } %>
   <div class="col-md-3 book-cover-lg">
     <%= amazon_book_cover(@book.amazon_id, @book.title) %>
+    <%= render partial: 'shared/edit_book', locals: { book: @book } %>
   </div>
   <div class="col-md-7">
     <h1><%= h(@book.title) %></h1>
@@ -9,7 +11,7 @@
     <div>Publisher: <%= h(@book.publisher) %></div>
     <div>Publisher: <%= @book.pub_date %></div>
     <div>Rating: <%= @book.rating %></div>
-    <div>Description: <%= h(@book.description) %></div>
+    <div>Description: <%= simple_format(h(@book.description)) %></div>
   </div>
   <div class="col-md-2">
       <p class="text-center price-box">$<%= @book.price %></p>

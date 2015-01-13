@@ -9,7 +9,7 @@
     <p>Publisher: <%= h(book.publisher) %></p>
     <p>Published: <%= Date.parse(book.pub_date.to_s).strftime('%b %d, %Y') %></p>
     <p>Rating: <%= book.rating + '/5' %></p>
-    <p><%= h(book.description) %></p>
+    <p><%= h(book.description.truncate_words(10)) %></p>
   </div>
   <div class="col-md-2">
     <p class="price-box text-center"><%= number_to_currency book.price %></p>
