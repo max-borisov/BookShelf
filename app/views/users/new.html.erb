@@ -29,8 +29,8 @@
               <%= f.submit 'Create account', class: 'btn btn-lg btn-primary btn-block' %>
             </div>
 
-            <%= render partial: 'shared/form_footer', locals: { text: link_to('Sign in', signin_path) + ', if you already have account.' } %>
-
         <% end %>
+
+        <%= render partial: 'shared/form_footer', locals: { text: link_to('Sign in', signin_path) + ', if you already have account.' } %>
     </div>
 </div>
