@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root to: "books#index"
   get   'signup'  => 'users#new'
   get   'signin'  => 'sessions#new'
+  get   'profile' => 'users#profile'
   post  'signin'  => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy'
 
   resources :books
   resources :users
