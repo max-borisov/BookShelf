@@ -3,11 +3,16 @@ Rails.application.routes.draw do
   get   'signup'  => 'users#new'
   get   'signin'  => 'sessions#new'
   get   'profile' => 'users#profile'
+
   post  'signin'  => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
   resources :books
   resources :users
+  # resources :passwords, only: [:edit, :update]
+
+  get     'password-update' => 'passwords#edit', as: 'password_edit'
+  patch   'password-update' => 'passwords#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
