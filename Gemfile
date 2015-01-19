@@ -34,6 +34,10 @@ gem 'bcrypt', '~> 3.1.9'
 
 #gem 'ruby-debug-ide'
 
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

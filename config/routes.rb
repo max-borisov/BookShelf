@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :books
   resources :users
+  resources :carts
   # resources :passwords, only: [:edit, :update]
 
   get     'password-update' => 'passwords#edit', as: 'password_edit'
