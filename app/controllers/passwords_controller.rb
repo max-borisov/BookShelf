@@ -2,13 +2,14 @@ class PasswordsController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
   def edit
-    @user = User.find(session[:user_id])
   end
 
   def update
-    @user.update(password_params)
-    render :edit
-    # redirect_to '/'
+    if @user.update(password_params)
+      redirect_to password_edit_path, flash: { success: 'Password has been changed.' }
+    else
+      render :edit
+    end
   end
 
   private

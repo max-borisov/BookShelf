@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
-  attr_accessor :current_password
+  # attr_accessor :current_password
 
   before_save { self.email = email.downcase }
 
@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
 
   # validate :active_password, on: :update
 
+=begin
   def active_password
-    # debug(1234)
-    # errors.add(:current_password, 'is not correct') unless self.authenticate(:current_password)
     errors.add(:current_password, 'is not correct') unless BCrypt::Password.new(password_digest) == current_password
   end
+=end
 
   # Returns the hash digest of the given string.
   def User.digest(string)
