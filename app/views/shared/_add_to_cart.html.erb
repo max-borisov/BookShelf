@@ -1,0 +1,1 @@
+<%= content_tag(:div, button_to('Add to cart', cart_items_path, params: { book_id: book_id }, class: 'btn btn-md btn-primary add-to-cart-btn'), class: 'text-center') if logged_in? %>
