@@ -1,0 +1,14 @@
+// Place all the styles related to the CartItems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart-items-price-box {
+  font-size: 2em;
+  margin-top: 20px;
+}
+.cart-items-info-message {
+  font-size: 1.2em;
+  span {
+    font-weight: bold;
+  }
+}

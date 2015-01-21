@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # get 'cart_items/index'
+  # get 'cart_items/destroy'
+
   root to: "books#index"
   get   'signup'  => 'users#new'
   get   'signin'  => 'sessions#new'
@@ -9,7 +12,8 @@ Rails.application.routes.draw do
 
   resources :books
   resources :users
-  resources :carts
+  # resources :carts
+  resources :cart_items
   # resources :passwords, only: [:edit, :update]
 
   get     'password-update' => 'passwords#edit', as: 'password_edit'

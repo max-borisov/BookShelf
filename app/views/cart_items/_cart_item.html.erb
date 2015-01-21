@@ -1,0 +1,18 @@
+<% book = cart_item.book %>
+<div class="row">
+  <div class="col-md-3 book-cover-mini">
+    <%= link_to amazon_book_cover(book.amazon_id, h(book.title)), book_path(book), title: h(book.title) %>
+  </div>
+  <div class="col-md-6">
+    <h2><%= link_to h(book.title), book_path(book), title: h(book.title) %></h2>
+    <h5>by <%= h(book.author) %> (Author)</h5>
+    <p>Publisher: <%= h(book.publisher) %></p>
+    <p>Rating: <%= book.rating + '/5' %></p>
+  </div>
+  <div class="col-md-3">
+    <p class="cart-items-price-box text-center"><%= number_to_currency book.price %></p>
+    <%= content_tag(:div, button_to('Delete from cart', cart_item, method: :delete, data: { confirm: 'Are you sure ? ' } ,class: 'btn btn-md btn-danger add-to-cart-btn'), class: 'text-center') %>
+  </div>
+</div>
+
+<hr>

@@ -13,8 +13,7 @@
   </div>
   <div class="col-md-2">
     <p class="price-box text-center"><%= number_to_currency book.price %></p>
-    <%= content_tag(:div, link_to('Add to cart', '#', class: 'btn btn-md btn-primary add-to-cart-btn'), class: 'text-center') if logged_in? %>
-    <%= content_tag(:div, button_to('Add to cart', carts_path(cart: {user_id: 3, book_id: 23}), class: 'btn btn-md btn-primary add-to-cart-btn'), class: 'text-center') if logged_in? %>
+    <%= content_tag(:div, button_to('Add to cart', cart_items_path, params: { book_id: book.id }, class: 'btn btn-md btn-primary add-to-cart-btn'), class: 'text-center') if logged_in? %>
   </div>
 </div>
 
