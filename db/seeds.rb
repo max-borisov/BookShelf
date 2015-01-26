@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+CartItem.destroy_all
 Book.destroy_all
 
 Book.create!([
@@ -28,7 +29,7 @@ Book.create!([
       price: 12.12,
       rating: 4,
       isbn: 111223331,
-      amazon_id: '1617291692',
+      amazon_id: '1449392776',
       publisher: 'Addison-Wesley Professional',
   },
   {
@@ -39,7 +40,7 @@ Book.create!([
       price: 12.12,
       rating: nil,
       isbn: 111223331,
-      amazon_id: '0321944275',
+      amazon_id: '1449333605',
       publisher: 'Manning Publications',
   },
 ])

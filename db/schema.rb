@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121131440) do
+ActiveRecord::Schema.define(version: 20150125175806) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -36,6 +36,25 @@ ActiveRecord::Schema.define(version: 20150121131440) do
 
   add_index "cart_items", ["book_id"], name: "index_cart_items_on_book_id", using: :btree
   add_index "cart_items", ["user_id"], name: "index_cart_items_on_user_id", using: :btree
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "order_id",   limit: 4
+    t.integer  "book_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "order_items", ["book_id"], name: "index_order_items_on_book_id", using: :btree
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "uid",         limit: 4
+    t.decimal  "total_price",           precision: 10
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["uid"], name: "index_orders_on_uid", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255
