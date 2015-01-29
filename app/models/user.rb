@@ -17,12 +17,6 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 5 }
 
-=begin
-  def orders_count
-    orders.count
-  end
-=end
-
   # validate :active_password, on: :update
 
 =begin
