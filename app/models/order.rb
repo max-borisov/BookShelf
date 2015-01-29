@@ -1,9 +1,9 @@
 class Order < ActiveRecord::Base
   has_many :order_items, dependent: :destroy
 
-  validates :uid, :total_price, presence: true
+  validates :user_id, :total_price, presence: true
   validates :total_price, numericality: true
-  validates :uid, numericality: { only_integer: true }
+  validates :user_id, numericality: { only_integer: true }
 
   def save user
     cart = ShoppingCart.new(user)

@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+
+  has_many :orders
+
   # attr_accessor :current_password
 
   before_save { self.email = email.downcase }
@@ -13,6 +16,12 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :password, length: { minimum: 5 }
+
+=begin
+  def orders_count
+    orders.count
+  end
+=end
 
   # validate :active_password, on: :update
 

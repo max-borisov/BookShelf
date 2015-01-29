@@ -1,5 +1,4 @@
 class ShoppingCart
-  # attr_writer :user
 
   def initialize user
     @user = user
@@ -25,7 +24,7 @@ class ShoppingCart
   end
 
   def create_order total_price
-    Order.create!(uid: @user.id, total_price: total_price)
+    Order.create!(user_id: @user.id, total_price: total_price)
   end
 
   def prepare_order_items order, cart_items

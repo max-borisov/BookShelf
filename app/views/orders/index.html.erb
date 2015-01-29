@@ -1,0 +1,16 @@
+
+<%= render partial: 'shared/page_header', locals: { title: 'Orders history' } %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <% if @orders.empty? %>
+        <div class="alert alert-warning text-center orders-history-alert">You don't have any orders yet.</div>
+    <% else %>
+        <%
+        orders_count = pluralize(@orders.count, 'order')
+        total_sum = number_to_currency @orders.pluck(:total_price).sum
+        %>
+        <div class="alert alert-info text-center orders-history-alert"><%= "You spent #{total_sum} for #{orders_count}" %>.</div>
+        <%= render @orders %>
+    <% end %>
+  </div>
+</div>
