@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :review]
+  before_action :set_reviews, only: [:show, :review]
 
   # GET /books
   # GET /books.json
@@ -10,8 +11,18 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    # @book = Book.find(params[:id])
-    # debugger()
+    @reviews = @book.reviews
+    @review = Review.new
+    # @review = @book.reviews.build(user_id: 3, book_id: 1)
+  end
+
+  def review
+    @review = Book.find(params[:id]).reviews.build(user_id: current_user.id, text: params[:review][:text])
+    if @review.save
+      redirect_to book_path + '#reviews'
+      return
+    end
+    render :show
   end
 
   # GET /books/new
@@ -69,8 +80,17 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
+    def set_reviews
+      @reviews = @book.reviews
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :publisher, :pub_date, :description, :price, :rating, :isbn, :amazon_id)
+      params.require(:book).permit(:title, :author, :publisher, :pub_date, :description, :price, :isbn, :amazon_id)
     end
+
+    def review_params
+      params.require(:review).permit(:text)
+    end
+
 end

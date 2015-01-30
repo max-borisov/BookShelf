@@ -159,6 +159,7 @@ DEPENDENCIES
   jquery-rails
   mysql2 (~> 0.3.17)
   rails (= 4.2.0)
+  rails-html-sanitizer (~> 1.0.1)
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

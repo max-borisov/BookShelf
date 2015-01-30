@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token
 
   has_many :orders
+  has_many :reviews
 
   # attr_accessor :current_password
 

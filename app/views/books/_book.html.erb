@@ -7,8 +7,7 @@
     <h5>by <%= h(book.author) %> (Author)</h5>
     <p>ISBN-10: <%= book.isbn %></p>
     <p>Publisher: <%= h(book.publisher) %></p>
-    <p>Published: <%= Date.parse(book.pub_date.to_s).strftime('%b %d, %Y') %></p>
-    <p>Rating: <%= book.rating + '/5' %></p>
+    <p>Published: <%= format_date(book.pub_date) %></p>
     <p><%= h(book.description.truncate_words(10)) %></p>
   </div>
   <div class="col-md-2">

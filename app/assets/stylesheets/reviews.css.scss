@@ -1,0 +1,13 @@
+// Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-block {
+  .review-author {
+    font-size: 1.1em;
+    .review-user-name {
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+}

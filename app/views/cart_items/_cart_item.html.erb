@@ -7,7 +7,6 @@
     <h2><%= link_to h(book.title), book_path(book), title: h(book.title) %></h2>
     <h5>by <%= h(book.author) %> (Author)</h5>
     <p>Publisher: <%= h(book.publisher) %></p>
-    <p>Rating: <%= book.rating + '/5' %></p>
   </div>
   <div class="col-md-3">
     <p class="cart-items-price-box text-center"><%= number_to_currency book.price %></p>

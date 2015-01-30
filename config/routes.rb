@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   post  'signin'  => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :books
+  resources :books do
+    post 'review', on: :member
+  end
+  # post 'book/review' => 'books#review', as: 'book_review'
+
   resources :users
   # resources :carts
   resources :cart_items

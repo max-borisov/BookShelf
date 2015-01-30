@@ -9,8 +9,7 @@
     <div>by <strong><%= h(@book.author) %></strong> (author)</div>
     <div>ISBN: <%= @book.isbn %></div>
     <div>Publisher: <%= h(@book.publisher) %></div>
-    <div>Publisher: <%= @book.pub_date %></div>
-    <div>Rating: <%= @book.rating %></div>
+    <div>Published: <%= format_date(@book.pub_date) %></div>
     <div>Description: <%= simple_format(h(@book.description)) %></div>
   </div>
   <div class="col-md-2">
@@ -18,3 +17,10 @@
     <%= render partial: 'shared/add_to_cart', locals: { book_id: @book.id } %>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-10" id="reviews">
+    <h4>Reviews</h4>
+    <%= render @reviews %>
+  </div>
+</div>
+<%= render partial: 'review_form' %>
