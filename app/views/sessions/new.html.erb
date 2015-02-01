@@ -1,14 +1,9 @@
 <h1 class="text-center">Sign in</h1>
 <hr>
-
-<%#= content_tag(:div, flash[:signin_error], class: 'alert alert-danger') if flash.include?(:signin_error) %>
-
-<% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
-
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+        <%= render partial: 'shared/flash' %>
+
         <%= form_for(:session, url: signin_path) do |f| %>
 
             <div class="form-group">

@@ -23,4 +23,4 @@
     <%= render @reviews %>
   </div>
 </div>
-<%= render partial: 'review_form' %>
+<%= render partial: 'review_form' if logged_in? %>

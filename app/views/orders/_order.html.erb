@@ -3,7 +3,7 @@
 <div class="row order-history-row">
     <div class="col-md-4 text-center">
       <p class="order-details"><%= number_to_currency order.total_price %></p>
-      <p class="order-books"><%= format_order_created_date order %></p>
+      <p class="order-books"><%= format_date order.created_at %></p>
     </div>
     <div class="col-md-8">
       <p class="order-books-amount"><%= pluralize(order_items.count, 'book') + " have been purchased" %></p>

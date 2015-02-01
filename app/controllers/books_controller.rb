@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  skip_before_action :authorize, only: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update, :destroy, :review]
   before_action :set_reviews, only: [:show, :review]
 
@@ -16,6 +17,7 @@ class BooksController < ApplicationController
     # @review = @book.reviews.build(user_id: 3, book_id: 1)
   end
 
+  # POST /review_book
   def review
     @review = Book.find(params[:id]).reviews.build(user_id: current_user.id, text: params[:review][:text])
     if @review.save

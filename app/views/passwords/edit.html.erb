@@ -7,13 +7,7 @@
     <%= render 'shared/flash' %>
 
     <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
+        <%= render partial: 'shared/form_validation_error', locals: { model: @user } %>
     <% end %>
 
     <%= form_for @user, url: password_edit_path, html: {role: 'form'} do |f| %>
