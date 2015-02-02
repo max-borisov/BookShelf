@@ -55,6 +55,8 @@ User.create!([
         email: 'tom@gmail.com',
         password: '111111',
         password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
     },
     {
         id: 5,
@@ -62,6 +64,8 @@ User.create!([
         email: 'jack@gmail.com',
         password: '111111',
         password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
     }
 ])
 puts("#{User.count} user(s) have been created.")

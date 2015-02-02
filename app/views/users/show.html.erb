@@ -4,6 +4,7 @@
     <%= image_tag user_gravatar(@user.email) %>
   </div>
   <div class="col-md-7">
+    <%= render partial: 'shared/flash' %>
     <div>Name: <strong><%= h(@user.name) %></strong></div>
     <div>Email: <%= @user.email %></div>
     <div>Registered: <%= @user.created_at %></div>

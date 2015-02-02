@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # resources :carts
   resources :cart_items
   resources :orders, only: [:index, :create]
+  resources :account_activations, only: [:edit]
   # resources :passwords, only: [:edit, :update]
 
   get     'password-update' => 'passwords#edit', as: 'password_edit'
