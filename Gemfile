@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# gem 'rails', '4.1.5'
 gem 'rails', '4.2.0'
 
 # Use sqlite3 as the database for Active Record
@@ -48,7 +47,10 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'mandrill-api'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'
