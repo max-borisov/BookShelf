@@ -9,6 +9,7 @@
 CartItem.destroy_all
 Book.destroy_all
 Review.destroy_all
+Order.destroy_all
 User.destroy_all
 
 Book.create!([
