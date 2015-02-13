@@ -7,8 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 CartItem.destroy_all
-
 Book.destroy_all
+Review.destroy_all
+User.destroy_all
+
 Book.create!([
   {
       id: 1,
@@ -46,7 +48,6 @@ Book.create!([
 ])
 puts("#{Book.count} book(s) have been created.")
 
-User.destroy_all
 User.create!([
     {
         id: 1,
@@ -69,7 +70,6 @@ User.create!([
 ])
 puts("#{User.count} user(s) have been created.")
 
-Review.destroy_all
 Review.create!([
     {
         text: "Stop reading whatever book you were reading and get this book ASAP. It is the most comprehensive book with a lot of topics, a lot of code snippets that explain the theory in hand very well and in fact they also show best practices when writing JS code! I've tried two other books and some video courses, but none of them come even close to this book. Remember to practice as much of the code examples, only skip them when you are certain you know what's going on. Best of luck!",
