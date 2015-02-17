@@ -27,6 +27,17 @@ class User < ActiveRecord::Base
   end
 =end
 
+  # Activates an account
+  def activate
+    update_attribute(:activated, true)
+    update_attribute(:activated_at, Time.zone.now)
+  end
+
+  # Sends activation email
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
