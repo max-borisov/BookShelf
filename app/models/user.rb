@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
 
   # Returns true if a password reset token has expired.
   def password_reset_expired?
-    reset_sent_at < 1.minute.ago
+    reset_sent_at < 2.hours.ago
   end
 
   private
