@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-8">
     <div class="add-review-block">
-      <%= form_for @review, url: review_book_path, html: {role: 'form'} do |f| %>
+      <%= form_for @review, url: new_book_review_path(@book), html: { role: 'form' } do |f| %>
           <div class="form-group">
             <%= f.label :text, 'Add your review/opinion:' %>
             <%= f.text_area :text, class: 'form-control' %>

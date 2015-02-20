@@ -11,9 +11,6 @@ Rails.application.routes.draw do
   post  'signin'  => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :books do
-    post 'review', on: :member
-  end
   # post 'book/review' => 'books#review', as: 'book_review'
 
   resources :users
@@ -22,7 +19,14 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :create]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :reviews, except: [:edit, :update]
   # resources :passwords, only: [:edit, :update]
+
+  resources :books do
+    # post 'review', on: :member
+    # delete 'review', on: :member
+    resources :reviews, except: [:edit, :update], on: :member
+  end
 
   get     'password-update' => 'passwords#edit', as: 'password_edit'
   patch   'password-update' => 'passwords#update'

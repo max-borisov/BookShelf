@@ -80,12 +80,12 @@ Review.create!([
     {
         text: "I am an intermediate coder, mainly fluent in Java and PHP. A couple years ago, in order to step up my game, I started teaching myself Javascript and learning about Node. After exhausting so many resources online and quickly tiring of clicking link after link, I recently started to search for a book with everything I need to further my Node knowledge in one place and in a discernible order. Practical Node.js is that book.",
         user_id: 1,
-        book_id: 2,
+        book_id: 1,
     },
     {
         text: "After going through many books I finally found the best and comprehensive resource to learn the node.js software development. Azat has really done a great work and compiled a great book which really help you in getting complete knowledge about the exciting technology. I read this book and really found it amazing without any doubt. Due to this book my concepts got improved and I started finding the way towards production level software programming. It would have been impossible without the help of this book and that is the reason I am thankful to the author and research team.",
         user_id: 2,
-        book_id: 3,
+        book_id: 1,
     },
     {
         text: 'NodeJS book review',

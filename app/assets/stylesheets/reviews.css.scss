@@ -3,11 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .review-block {
+  padding-left: 10px;
+  border-left: 10px solid #eee;
   .review-author {
     font-size: 1.1em;
     .review-user-name {
       font-weight: bold;
       font-style: italic;
     }
+  }
+}
+.add-review-block {
+  textarea {
+    min-height: 120px;
   }
 }

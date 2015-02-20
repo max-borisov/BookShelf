@@ -1,5 +1,13 @@
 <div class="review-block">
-  <p class="review-author">By <span class="review-user-name"><%= review.user.name %></span> on <%= format_date review.created_at %></p>
+
+  <%= button_to book_review_path(@book, review), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger pull-right', title: 'Delete review' do %>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  <% end  %>
+
+  <p class="review-author">
+    By <span class="review-user-name"><%= review.user.name %></span> on <%= format_date review.created_at %>
+  </p>
+
   <p class="review-text"><%= review.text %></p>
 </div>
 <hr>
