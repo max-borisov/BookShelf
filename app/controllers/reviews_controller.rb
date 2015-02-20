@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  # before_action :set_review_with_book, only: [:destroy]
   before_action :set_book, only: [:destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def destroy
     @book.reviews.destroy(params[:id])
@@ -8,13 +8,11 @@ class ReviewsController < ApplicationController
   end
 
   private
-    # @todo Show error msg if record not found
-    def set_review_with_book
-      @review = Book.find(params[:book_id]).reviews.where(id: params[:id])
-    end
-
     def set_book
       @book = Book.find(params[:book_id])
     end
 
+    def record_not_found
+      redirect_to books_path, flash: { danger: 'Record not found' }
+    end
 end
