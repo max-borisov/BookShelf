@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authorize, only: [:new, :create]
+  before_action :check_admin, only: [:index]
 
   def index
     @users = User.all.order('id ASC')

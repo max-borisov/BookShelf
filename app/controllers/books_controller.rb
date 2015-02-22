@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   skip_before_action :authorize, only: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:edit, :update]
 
   # GET /books
   # GET /books.json
@@ -11,7 +12,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @reviews = @book.reviews
+    @reviews = @book.reviews.order('created_at ASC')
     @review = Review.new
   end
 

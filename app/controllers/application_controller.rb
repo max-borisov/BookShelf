@@ -8,10 +8,13 @@ class ApplicationController < ActionController::Base
   before_action :authorize
 
   protected
-  def authorize
-    unless User.find_by(id: session[:user_id])
-      redirect_to signin_url, flash: { warning: 'Please log in' }
+    def authorize
+      unless User.find_by(id: session[:user_id])
+        redirect_to signin_url, flash: { warning: 'Please log in' }
+      end
     end
-  end
 
+    def check_admin
+      redirect_to root_path unless current_user.admin?
+    end
 end

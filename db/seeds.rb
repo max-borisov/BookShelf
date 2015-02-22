@@ -173,6 +173,21 @@ Review.create!([
         text: 'NodeJS book review',
         user_id: 2,
         book_id: 1,
-    }
+    },
+    {
+        text: "After going through many books I finally found the best and comprehensive resource to learn the node.js software development. Azat has really done a great work and compiled a great book which really help you in getting complete knowledge about the exciting technology. I read this book and really found it amazing without any doubt. Due to this book my concepts got improved and I started finding the way towards production level software programming. It would have been impossible without the help of this book and that is the reason I am thankful to the author and research team.",
+        user_id: 5,
+        book_id: 2,
+    },
+    {
+        text: "After going through many books I finally found the best and comprehensive resource to learn the node.js software development. Azat has really done a great work and compiled a great book which really help you in getting complete knowledge about the exciting technology. I read this book and really found it amazing without any doubt. Due to this book my concepts got improved and I started finding the way towards production level software programming. It would have been impossible without the help of this book and that is the reason I am thankful to the author and research team.",
+        user_id: 5,
+        book_id: 3,
+    },
+    {
+        text: "After going through many books I finally found the best and comprehensive resource to learn the node.js software development. Azat has really done a great work and compiled a great book which really help you in getting complete knowledge about the exciting technology. I read this book and really found it amazing without any doubt. Due to this book my concepts got improved and I started finding the way towards production level software programming. It would have been impossible without the help of this book and that is the reason I am thankful to the author and research team.",
+        user_id: 8,
+        book_id: 3,
+    },
 ])
 puts("#{Review.count} reviews(s) have been created.")
