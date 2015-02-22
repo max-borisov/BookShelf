@@ -7,12 +7,24 @@ reviews = @user.reviews.count
   <div class="col-md-3">
     <%= image_tag user_gravatar(@user.email) %>
   </div>
-  <div class="col-md-7 user-profile-info">
+  <div class="col-md-7">
     <%= render partial: 'shared/flash' %>
-    <div>Name: <strong><%= h(@user.name) %></strong></div>
-    <div>Email: <strong><%= @user.email %></strong></div>
-    <div>Orders: <%= orders > 0 ? orders : 'You haven\'t made any orders yet.' %></div>
-    <div>Reviews: <%= reviews > 0 ? reviews : 'You haven\'t wrote any review yet.' %></div>
-    <div>Joined: <%= @user.created_at.to_formatted_s(:long) %></div>
+    <dl class="dl-horizontal user-profile-info">
+      <dt>Name:</dt>
+      <dd><strong><%= h(@user.name) %></strong></dd>
+
+      <dt>Email:</dt>
+      <dd><strong><%= @user.email %></strong></dd>
+
+      <dt>Orders:</dt>
+      <dd><%= orders > 0 ? orders : 'You haven\'t made any orders yet.' %></dd>
+
+      <dt>Reviews:</dt>
+      <dd><%= reviews > 0 ? reviews : 'You haven\'t wrote any review yet.' %></dd>
+
+      <dt>Joined:</dt>
+      <dd><%= @user.created_at.to_formatted_s(:long) %></dd>
+    </dl>
   </div>
 </div>
+
