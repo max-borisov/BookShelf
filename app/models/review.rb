@@ -8,6 +8,8 @@ class Review < ActiveRecord::Base
 
   validates :text, presence: true
 
+
+
   protected
     def sanitize_html
       self.text = sanitize text, tags: ['"', "'"]

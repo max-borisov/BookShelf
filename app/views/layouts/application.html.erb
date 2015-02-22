@@ -43,6 +43,9 @@
 
             <ul class="nav navbar-nav navbar-right">
               <% if logged_in? %>
+                  <li class="nav-user-name">
+                    <span>Hi, <%= current_user.name %></span>
+                  </li>
                   <li>
                     <a href="<%= cart_items_path %>">
                       <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
@@ -77,7 +80,6 @@
 
 </div>
 
-<%#= console if Rails.env.development? %>
 <%= render 'shared/debug' if Rails.env.development? %>
 
 </body>

@@ -20,5 +20,10 @@ body {
     padding-bottom: 20px;
 }
 .navbar {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  .nav-user-name {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-right: 20px;
+  }
 }
