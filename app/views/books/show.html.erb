@@ -4,13 +4,11 @@
     <p class="text-center">
       <%= amazon_book_cover(@book.amazon_id, @book.title) %>
     </p>
-    <%#= render 'shared/edit_book', book: @book %>
     <div class="pull-left">
       <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-md btn-warning book-edit-link' %>
     </div>
     <div class="pull-right">
-      <%#= link_to 'Delete', edit_book_path(@book), class: 'btn btn-md btn-danger book-delete-link' %>
-      <%= button_to 'Delete', book_path(@book), method: :delete, class: 'btn btn-md btn-danger book-delete-link' %>
+        <%= button_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-md btn-danger book-delete-link' %>
     </div>
   </div>
   <div class="col-md-7">
