@@ -1,8 +1,8 @@
 <div class="row">
-  <%= render partial: 'shared/back_button', locals: { link: books_path() } %>
+  <%= render 'shared/back_button', link: books_path() %>
   <div class="col-md-3 book-cover-lg">
     <%= amazon_book_cover(@book.amazon_id, @book.title) %>
-    <%= render partial: 'shared/edit_book', locals: { book: @book } %>
+    <%= render 'shared/edit_book', book: @book %>
   </div>
   <div class="col-md-7">
     <h1><%= h(@book.title) %></h1>
@@ -14,7 +14,7 @@
   </div>
   <div class="col-md-2">
     <p class="text-center price-box">$<%= @book.price %></p>
-    <%= render partial: 'shared/add_to_cart', locals: { book_id: @book.id } %>
+    <%= render 'shared/add_to_cart', book_id: @book.id %>
   </div>
 </div>
 <div class="row">
@@ -24,4 +24,4 @@
     <%= render @reviews %>
   </div>
 </div>
-<%= render partial: 'review_form' if logged_in? %>
+<%= render 'review_form' if logged_in? %>

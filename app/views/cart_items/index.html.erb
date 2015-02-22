@@ -1,8 +1,7 @@
-<%= render partial: 'shared/page_header', locals: { title: 'Shopping cart' } %>
-
+<%= render 'shared/page_header', title: 'Shopping cart' %>
 <%
-   empty_cart = empty_cart current_user
-   msg_text = "You have #{pluralize(cart_items_amount(current_user), 'item')} in your shopping cart. Total price: <span>#{number_to_currency(total_price_for_cart current_user)}</span>".html_safe
+empty_cart = empty_cart current_user
+msg_text = "You have #{pluralize(cart_items_amount(current_user), 'item')} in your shopping cart. Total price: <span>#{number_to_currency(total_price_for_cart current_user)}</span>".html_safe
 %>
 
 <div class="alert alert-info text-center cart-items-info-message" role="alert">
@@ -13,9 +12,7 @@
       <div class="pull-right"><%= button_to 'Checkout', orders_path, class: 'btn btn-primary btn-md' %></div>
   <% end %>
 </div>
-
 <%= render partial: 'shared/flash' %>
-
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <%= render @cart_items %>

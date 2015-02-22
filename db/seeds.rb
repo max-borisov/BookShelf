@@ -67,6 +67,78 @@ User.create!([
         password_confirmation: '111111',
         activated: true,
         activated_at: Time.zone.now
+    },
+    {
+        id: 3,
+        name: 'Matt',
+        email: 'matt@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 4,
+        name: 'Nick',
+        email: 'nick@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 5,
+        name: 'Jeff',
+        email: 'jeff@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 6,
+        name: 'Ophra',
+        email: 'ophra@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 7,
+        name: 'Ketty',
+        email: 'ketty@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 8,
+        name: 'Kim',
+        email: 'kim@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 9,
+        name: 'Th',
+        email: 'th@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
+    },
+    {
+        id: 10,
+        name: 'Dan',
+        email: 'dan@gmail.com',
+        password: '111111',
+        password_confirmation: '111111',
+        activated: true,
+        activated_at: Time.zone.now
     }
 ])
 puts("#{User.count} user(s) have been created.")

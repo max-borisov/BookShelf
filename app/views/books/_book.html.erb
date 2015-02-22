@@ -12,7 +12,7 @@
   </div>
   <div class="col-md-2">
     <p class="price-box text-center"><%= number_to_currency book.price %></p>
-    <%= render partial: 'shared/add_to_cart', locals: { book_id: book.id } %>
+    <%= render 'shared/add_to_cart', book_id: book.id %>
   </div>
 </div>
 

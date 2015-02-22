@@ -1,9 +1,8 @@
 <h1 class="text-center">Sign up</h1>
 <hr>
-
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <%= render partial: 'shared/form_validation_error', locals: { model: @user } %>
+        <%= render 'shared/form_validation_error', model: @user %>
         <%= form_for(@user, html: { class: '', role: 'form' }) do |f| %>
 
             <div class="form-group">
@@ -32,6 +31,6 @@
 
         <% end %>
 
-        <%= render partial: 'shared/form_footer', locals: { text: link_to('Sign in', signin_path) + ', if you already have account.' } %>
+        <%= render 'shared/form_footer', text: link_to('Sign in', signin_path) + ', if you already have account.' %>
     </div>
 </div>

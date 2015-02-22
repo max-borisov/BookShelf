@@ -1,13 +1,9 @@
 <div class="row">
-
-  <%= render partial: 'shared/page_header', locals: { title: 'Update password' } %>
-
+  <%= render 'shared/page_header', title: 'Update password' %>
   <div class="col-md-6 col-md-offset-3">
-
     <%= render 'shared/flash' %>
-
     <% if @user.errors.any? %>
-        <%= render partial: 'shared/form_validation_error', locals: { model: @user } %>
+        <%= render 'shared/form_validation_error', model: @user %>
     <% end %>
 
     <%= form_for @user, url: password_edit_path, html: {role: 'form'} do |f| %>
@@ -27,6 +23,5 @@
           <%= f.submit class: 'btn btn-lg btn-primary btn-block' %>
         </div>
     <% end %>
-
   </div>
 </div>
