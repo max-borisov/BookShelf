@@ -1,8 +1,17 @@
 <div class="row">
   <%= render 'shared/back_button', link: books_path() %>
   <div class="col-md-3 book-cover-lg">
-    <%= amazon_book_cover(@book.amazon_id, @book.title) %>
-    <%= render 'shared/edit_book', book: @book %>
+    <p class="text-center">
+      <%= amazon_book_cover(@book.amazon_id, @book.title) %>
+    </p>
+    <%#= render 'shared/edit_book', book: @book %>
+    <div class="pull-left">
+      <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-md btn-warning book-edit-link' %>
+    </div>
+    <div class="pull-right">
+      <%#= link_to 'Delete', edit_book_path(@book), class: 'btn btn-md btn-danger book-delete-link' %>
+      <%= button_to 'Delete', book_path(@book), method: :delete, class: 'btn btn-md btn-danger book-delete-link' %>
+    </div>
   </div>
   <div class="col-md-7">
     <h1><%= h(@book.title) %></h1>
@@ -18,10 +27,10 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8" id="reviews">
+  <div class="col-md-10 col-md-offset-1" id="reviews">
     <h4 class="text-center">Customer reviews</h4>
     <%= render 'shared/flash' %>
     <%= render @reviews %>
+    <%= render 'review_form' if logged_in? %>
   </div>
 </div>
-<%= render 'review_form' if logged_in? %>
