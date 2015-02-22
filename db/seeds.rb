@@ -57,7 +57,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 2,
@@ -66,7 +67,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 3,
@@ -75,7 +77,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: true
     },
     {
         id: 4,
@@ -84,7 +87,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 5,
@@ -93,7 +97,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 6,
@@ -102,7 +107,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 7,
@@ -111,7 +117,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 8,
@@ -120,7 +127,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 9,
@@ -129,7 +137,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     },
     {
         id: 10,
@@ -138,7 +147,8 @@ User.create!([
         password: '111111',
         password_confirmation: '111111',
         activated: true,
-        activated_at: Time.zone.now
+        activated_at: Time.zone.now,
+        admin: false
     }
 ])
 puts("#{User.count} user(s) have been created.")

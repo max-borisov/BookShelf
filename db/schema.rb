@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218063211) do
+ActiveRecord::Schema.define(version: 20150222163708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150218063211) do
     t.boolean  "activated",                     default: false, null: false
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.boolean  "admin",                         default: false, null: false
   end
 
   add_foreign_key "cart_items", "books"
