@@ -1,0 +1,36 @@
+Book.create!([
+  {
+      id: 1,
+      title: 'Ruby',
+      author: 'Ruby author',
+      pub_date: '12/12/2014',
+      description: 'Cool book',
+      price: 12.12,
+      isbn: 111223331,
+      amazon_id: '1941222196',
+      publisher: 'Pragmatic Bookshelf',
+  },
+  {
+      id: 2,
+      title: 'PHP',
+      author: 'PHP author',
+      pub_date: '12/12/2014',
+      description: 'Cool book',
+      price: 12.12,
+      isbn: 111223331,
+      amazon_id: '1449392776',
+      publisher: 'Addison-Wesley Professional',
+  },
+  {
+      id: 3,
+      title: 'NodeJS',
+      author: 'NodeJS author',
+      pub_date: '12/12/2014',
+      description: 'Cool book',
+      price: 12.12,
+      isbn: 111223331,
+      amazon_id: '1449333605',
+      publisher: 'Manning Publications',
+  },
+])
+puts("#{Book.count} book(s) have been created.")
