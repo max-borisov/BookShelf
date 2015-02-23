@@ -26,8 +26,4 @@ class ReviewsController < ApplicationController
     def set_book
       @book = Book.find(params[:book_id])
     end
-
-    def record_not_found
-      redirect_to books_path, flash: { danger: 'Record not found' }
-    end
 end

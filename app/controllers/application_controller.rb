@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
     def check_admin
       redirect_to root_path unless current_user.admin?
     end
+
+  def record_not_found
+    redirect_to root_path, flash: { danger: 'Record not found.' }
+  end
 end

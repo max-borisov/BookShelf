@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   skip_before_action :authorize, only: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :check_admin, only: [:edit, :update]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   # GET /books
   # GET /books.json
