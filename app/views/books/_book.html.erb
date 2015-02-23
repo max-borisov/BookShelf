@@ -10,7 +10,7 @@
     <p>Published: <%= format_date(book.pub_date) %></p>
     <p><%= h(book.description.truncate_words(10)) %></p>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 book-price-block">
     <p class="price-box text-center"><%= number_to_currency book.price %></p>
     <%= render 'shared/add_to_cart', book_id: book.id %>
   </div>

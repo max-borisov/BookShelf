@@ -23,7 +23,7 @@
     <div>Published: <%= format_date(@book.pub_date) %></div>
     <div>Description: <%= simple_format(h(@book.description)) %></div>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 book-price-block">
     <p class="text-center price-box">$<%= @book.price %></p>
     <%= render 'shared/add_to_cart', book_id: @book.id %>
   </div>
