@@ -10,7 +10,7 @@
   </div>
   <div class="col-md-3">
     <p class="cart-items-price-box text-center"><%= number_to_currency book.price %></p>
-    <%= content_tag(:div, button_to('Delete from cart', cart_item, method: :delete, data: { confirm: 'Are you sure ?' } ,class: 'btn btn-md btn-danger add-to-cart-btn'), class: 'text-center') %>
+    <%= content_tag(:div, button_to('Delete from cart', cart_item, method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-md btn-danger add-to-cart-btn'), class: 'text-center') %>
   </div>
 </div>
 

@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
 
-  has_many :orders
-  has_many :reviews
+  has_many :orders, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   # attr_accessor :current_password
 
