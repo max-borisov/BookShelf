@@ -261,6 +261,81 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
       isbn: '1449373194',
       amazon_id: '1449373194',
       publisher: 'O\'Reilly Media',
-  },
+  }
 ])
 puts("#{Book.count} book(s) have been created.")
+
+=begin,
+  {
+      id: 12,
+      title: 'Beginning Databases with PostgreSQL: From Novice to Professional',
+      author: 'Richard Stones, Neil Matthew',
+      pub_date: '06/09/2007',
+      description: "
+  <ul>
+  <li>The most updated PostgreSQL book on the market, covering version 8.0</li>
+  <li>Highlights the most popular PostgreSQL APIs, including C, Perl, PHP, and Java</li>
+  <li>This is two books in one; it simultaneously covers key relational database design principles, while teaching PostgreSQL</li>
+  </ul>",
+      price: 34.08,
+      isbn: '1590594789',
+      amazon_id: '1590594789',
+      publisher: 'Apress',
+  },
+  {
+      id: 13,
+      title: 'Head First JavaScript Programming',
+      author: 'Eric T. Freeman, Elisabeth Robs',
+      pub_date: '10/04/2014',
+      description: '
+  <h5>What will you learn from this book?</h5>
+
+<p>This brain-friendly guide teaches you everything from JavaScript language fundamentals to advanced topics, including objects, functions, and the browser’s document object model. You won’t just be reading—you’ll be playing games, solving puzzles, pondering mysteries, and interacting with JavaScript in ways you never imagined. And you’ll write real code, lots of it, so you can start building your own web applications. Prepare to open your mind as you learn (and nail) key topics including:</p>
+
+<ul>
+<li>The inner details of JavaScript</li>
+<li>How JavaScript works with the browser</li>
+<li>The secrets of JavaScript types</li>
+<li>Using arrays</li>
+<li>The power of functions</li>
+<li>How to work with objects</li>
+<li>Making use of prototypes</li>
+<li>Understanding closures</li>
+<li>Writing and testing applications</li>
+</ul>
+
+<h5>What’s so special about this book?</h5>
+<p>We think your time is too valuable to waste struggling with new concepts. Using the latest research in cognitive science and learning theory to craft a multi-sensory learning experience, Head First JavaScript Programming uses a visually rich format designed for the way your brain works, not a text-heavy approach that puts you to sleep. This book replaces Head First JavaScript, which is now out of print.</p>',
+      price: 35.70,
+      isbn: '144934013X',
+      amazon_id: '144934013X',
+      publisher: 'O\'Reilly Media;',
+  },
+  {
+      id: 14,
+      title: 'JavaScript Cookbook',
+      author: 'Shelley Powers',
+      pub_date: '13/02/2015',
+      description: '
+      <p>Problem solving with JavaScript is a lot trickier now that its use has expanded considerably in size, scope, and complexity. This cookbook has your back, with recipes for common tasks across the JavaScript world, whether you’re working in the browser, the server, or a mobile environment. Each recipe includes reusable code and practical advice for tackling JavaScript objects, Node, Ajax, JSON, data persistence, graphical and media applications, complex frameworks, modular JavaScript, APIs, and many related technologies.</p>
+
+  <p>Aimed at people who have some experience with JavaScript, the first part covers traditional uses of JavaScript, along with new ideas and improved functionality. The second part dives into the server, mobile development, and a plethora of leading-edge tools. You’ll save time—and learn more about JavaScript in the process.</p>
+
+<p>Topics include:</p>
+
+<p>Classic JavaScript:</p>
+
+<ul>
+<li>Arrays, functions, and the JavaScript Object</li>
+<li>Accessing the user interface</li>
+<li>Testing and accessibility</li>
+<li>Creating and using JavaScript libraries</li>
+<li>Client-server communication with Ajax</li>
+<li>Rich, interactive web effects</li>
+</ul>',
+      price: 35.09,
+      isbn: '1491901888',
+      amazon_id: '1491901888',
+      publisher: 'O\'Reilly Media;',
+  }
+=end
