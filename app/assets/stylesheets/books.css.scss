@@ -34,3 +34,14 @@
   background: #eee;
   padding-bottom: 30px;
 }
+.book-info-catalog {
+  h2 {
+    margin-top: 0;
+  }
+  p {
+    margin-bottom: 5px;
+    span {
+      font-weight: bold;
+    }
+  }
+}

@@ -1,14 +1,15 @@
+<% book_url = book_path(book) %>
 <div class="row">
   <div class="col-md-2 book-cover">
-    <%= link_to amazon_book_cover(book.amazon_id, h(book.title)), book_path(book), title: h(book.title) %>
+    <%= link_to amazon_book_cover(book.amazon_id, h(book.title)), book_url, title: h(book.title) %>
   </div>
-  <div class="col-md-8">
-    <h2><%= link_to h(book.title), book_path(book), title: h(book.title) %></h2>
-    <h5>by <%= h(book.author) %> (Author)</h5>
-    <p>ISBN-10: <%= book.isbn %></p>
-    <p>Publisher: <%= h(book.publisher) %></p>
-    <p>Published: <%= format_date(book.pub_date) %></p>
-    <p><%= h(book.description.truncate_words(10)) %></p>
+  <div class="col-md-8 book-info-catalog">
+    <h2><%= link_to h(book.title), book_url, title: h(book.title) %></h2>
+    <h5>by <%= h(book.author) %>.</h5>
+    <p><span>ISBN-10:</span> <%= book.isbn %></p>
+    <p><span>Publisher:</span> <%= h(book.publisher) %></p>
+    <p><span>Published:</span> <%= format_date(book.pub_date) %></p>
+    <p><%= h(book.description.truncate_words(50)) + ' ' + link_to('more', book_url) %>.</p>
   </div>
   <div class="col-md-2 book-price-block">
     <p class="price-box text-center"><%= number_to_currency book.price %></p>
