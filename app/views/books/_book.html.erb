@@ -3,13 +3,13 @@
   <div class="col-md-2 book-cover">
     <%= link_to amazon_book_cover(book.amazon_id, h(book.title)), book_url, title: h(book.title) %>
   </div>
-  <div class="col-md-8 book-info-catalog">
+  <div class="col-md-8 book-info-block">
     <h2><%= link_to h(book.title), book_url, title: h(book.title) %></h2>
     <h5>by <%= h(book.author) %>.</h5>
     <p><span>ISBN-10:</span> <%= book.isbn %></p>
     <p><span>Publisher:</span> <%= h(book.publisher) %></p>
     <p><span>Published:</span> <%= format_date(book.pub_date) %></p>
-    <p><%= h(book.description.truncate_words(50)) + ' ' + link_to('more', book_url) %>.</p>
+    <p><%= sanitize(book.description.truncate_words(50), tags: %w(p h5 ul li)) + ' ' + link_to('more', book_url) %>.</p>
   </div>
   <div class="col-md-2 book-price-block">
     <p class="price-box text-center"><%= number_to_currency book.price %></p>
