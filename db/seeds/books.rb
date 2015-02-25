@@ -208,7 +208,7 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 <li>Prepares you to use Ruby anywhere for any purpose</li>
 </ul>
 
-<h5>About the Author</5>
+<h5>About the Author</h5>
 <p>David A. Black is an internationally known Ruby developer, author, trainer, speaker, event organizer, and founder of Ruby Central, as well as a Lead Consultant at Cyrus Innovation.</p>",
       price: 32.10,
       isbn: '1617291692',
@@ -261,6 +261,6 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
       isbn: '1449373194',
       amazon_id: '1449373194',
       publisher: 'O\'Reilly Media',
-  },
+  }
 ])
 puts("#{Book.count} book(s) have been created.")

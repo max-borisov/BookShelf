@@ -1,5 +1,5 @@
 <div class="row">
-  <%= render 'shared/back_button', link: books_path() %>
+  <%= render 'shared/back_button', link: :back %>
   <div class="clearfix"></div>
   <%= render 'shared/flash' %>
   <div class="col-md-3 book-cover-lg">
@@ -30,8 +30,10 @@
 </div>
 <div class="row">
   <div class="col-md-10 col-md-offset-1" id="reviews">
-    <h4 class="text-center">Customer reviews</h4>
-    <%= render @reviews %>
+    <% if @reviews.any? %>
+        <h4 class="text-center">Customer reviews</h4>
+        <%= render @reviews %>
+    <% end %>
     <%= render 'review_form' if logged_in? %>
   </div>
 </div>
