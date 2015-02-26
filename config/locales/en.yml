@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        isbn: "ISBN"
+        amazon_id: "Amazon id"

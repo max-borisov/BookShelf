@@ -6,5 +6,6 @@ class Book < ActiveRecord::Base
   validates :title, :author, :publisher, length: { maximum: 150 }
   validates :isbn, length: { maximum: 20 }
   validates :amazon_id, length: { maximum: 50 }
+  validates :isbn, :amazon_id, uniqueness: { message: 'is not unique' }
   validates :price, numericality: true
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222163708) do
+ActiveRecord::Schema.define(version: 20150226133729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20150222163708) do
     t.string   "publisher",   limit: 255
     t.string   "amazon_id",   limit: 255
   end
+
+  add_index "books", ["amazon_id"], name: "index_books_on_amazon_id", unique: true, using: :btree
+  add_index "books", ["isbn"], name: "index_books_on_isbn", unique: true, using: :btree
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "user_id"

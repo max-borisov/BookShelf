@@ -320,29 +320,6 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
   },
   {
       id: 14,
-      title: 'The Little Book on CoffeeScript',
-      author: 'Alex MacCaw',
-      pub_date: '31/01/2012',
-      description: '
-      <p>This concise book shows JavaScript developers how to build superb web applications with CoffeeScript, the remarkable language that’s gaining considerable interest. Through example code, this guide demonstrates how CoffeeScript abstracts JavaScript, providing syntactical sugar and preventing many common errors. You’ll learn CoffeeScript’s syntax and idioms step by step, from basic variables and functions to complex comprehensions and classes.</p>
-
-<p>Written by Alex MacCaw, author of JavaScript Web Applications (O’Reilly), with contributions from CoffeeScript creator Jeremy Ashkenas, this book quickly teaches you best practices for using this language—not just on the client side, but for server-side applications as well. It’s time to take a ride with the little language that could.</p>
-
-<ul>
-<li>Discover how CoffeeScript’s syntax differs from JavaScript</li>
-<li>Learn about features such as array comprehensions, destructuring assignments, and classes</li>
-<li>Explore CoffeeScript idioms and compare them to their JavaScript counterparts</li>
-<li>Compile CoffeeScript files in static sites with the Cake build system</li>
-<li>Use CommonJS modules to structure and deploy CoffeeScript client-side applications</li>
-<li>Examine JavaScript’s bad parts—including features CoffeeScript was able to fix</li>
-</ul>',
-      price: 8.99,
-      isbn: '1449321054',
-      amazon_id: '1449321054',
-      publisher: 'O\'Reilly Media',
-  },
-  {
-      id: 15,
       title: 'CoffeeScript: Accelerated JavaScript Development',
       author: 'Trevor Burnham',
       pub_date: '16/02/2015',
