@@ -261,6 +261,110 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
       isbn: '1449373194',
       amazon_id: '1449373194',
       publisher: 'O\'Reilly Media',
-  }
+  },
+  {
+      id: 12,
+      title: 'Head First JavaScript Programming',
+      author: 'Eric T. Freeman, Elisabeth Robs',
+      pub_date: '10/04/2014',
+      description: '
+  <h5>What will you learn from this book?</h5>
+
+<p>This brain-friendly guide teaches you everything from JavaScript language fundamentals to advanced topics, including objects, functions, and the browser’s document object model. You won’t just be reading—you’ll be playing games, solving puzzles, pondering mysteries, and interacting with JavaScript in ways you never imagined. And you’ll write real code, lots of it, so you can start building your own web applications. Prepare to open your mind as you learn (and nail) key topics including:</p>
+
+<ul>
+<li>The inner details of JavaScript</li>
+<li>How JavaScript works with the browser</li>
+<li>The secrets of JavaScript types</li>
+<li>Using arrays</li>
+<li>The power of functions</li>
+<li>How to work with objects</li>
+<li>Making use of prototypes</li>
+<li>Understanding closures</li>
+<li>Writing and testing applications</li>
+</ul>
+
+<h5>What’s so special about this book?</h5>
+<p>We think your time is too valuable to waste struggling with new concepts. Using the latest research in cognitive science and learning theory to craft a multi-sensory learning experience, Head First JavaScript Programming uses a visually rich format designed for the way your brain works, not a text-heavy approach that puts you to sleep. This book replaces Head First JavaScript, which is now out of print.</p>',
+      price: 35.70,
+      isbn: '144934013X',
+      amazon_id: '144934013X',
+      publisher: 'O\'Reilly Media',
+  },
+  {
+      id: 13,
+      title: 'JavaScript Cookbook',
+      author: 'Shelley Powers',
+      pub_date: '13/02/2015',
+      description: '
+      <p>Problem solving with JavaScript is a lot trickier now that its use has expanded considerably in size, scope, and complexity. This cookbook has your back, with recipes for common tasks across the JavaScript world, whether you’re working in the browser, the server, or a mobile environment. Each recipe includes reusable code and practical advice for tackling JavaScript objects, Node, Ajax, JSON, data persistence, graphical and media applications, complex frameworks, modular JavaScript, APIs, and many related technologies.</p>
+
+  <p>Aimed at people who have some experience with JavaScript, the first part covers traditional uses of JavaScript, along with new ideas and improved functionality. The second part dives into the server, mobile development, and a plethora of leading-edge tools. You’ll save time—and learn more about JavaScript in the process.</p>
+
+<p>Topics include:</p>
+
+<p>Classic JavaScript:</p>
+
+<ul>
+<li>Arrays, functions, and the JavaScript Object</li>
+<li>Accessing the user interface</li>
+<li>Testing and accessibility</li>
+<li>Creating and using JavaScript libraries</li>
+<li>Client-server communication with Ajax</li>
+<li>Rich, interactive web effects</li>
+</ul>',
+      price: 35.09,
+      isbn: '1491901888',
+      amazon_id: '1491901888',
+      publisher: 'O\'Reilly Media',
+  },
+  {
+      id: 14,
+      title: 'The Little Book on CoffeeScript',
+      author: 'Alex MacCaw',
+      pub_date: '31/01/2012',
+      description: '
+      <p>This concise book shows JavaScript developers how to build superb web applications with CoffeeScript, the remarkable language that’s gaining considerable interest. Through example code, this guide demonstrates how CoffeeScript abstracts JavaScript, providing syntactical sugar and preventing many common errors. You’ll learn CoffeeScript’s syntax and idioms step by step, from basic variables and functions to complex comprehensions and classes.</p>
+
+<p>Written by Alex MacCaw, author of JavaScript Web Applications (O’Reilly), with contributions from CoffeeScript creator Jeremy Ashkenas, this book quickly teaches you best practices for using this language—not just on the client side, but for server-side applications as well. It’s time to take a ride with the little language that could.</p>
+
+<ul>
+<li>Discover how CoffeeScript’s syntax differs from JavaScript</li>
+<li>Learn about features such as array comprehensions, destructuring assignments, and classes</li>
+<li>Explore CoffeeScript idioms and compare them to their JavaScript counterparts</li>
+<li>Compile CoffeeScript files in static sites with the Cake build system</li>
+<li>Use CommonJS modules to structure and deploy CoffeeScript client-side applications</li>
+<li>Examine JavaScript’s bad parts—including features CoffeeScript was able to fix</li>
+</ul>',
+      price: 8.99,
+      isbn: '1449321054',
+      amazon_id: '1449321054',
+      publisher: 'O\'Reilly Media',
+  },
+  {
+      id: 15,
+      title: 'CoffeeScript: Accelerated JavaScript Development',
+      author: 'Trevor Burnham',
+      pub_date: '16/02/2015',
+      description: '
+      <p>Over the last five years, CoffeeScript has taken the web development world by storm. With the humble motto "It\'s just JavaScript," CoffeeScript provides all the power of the JavaScript language in a friendly and elegant package. This extensively revised and updated new edition includes an all-new project to demonstrate CoffeeScript in action, both in the browser and on a Node.js server. There\'s no faster way to learn to write a modern web application.</p>
+
+<p>This new edition has been extensively revised and updated to reflect the current state and features of CoffeeScript. Every chapter has been revised and refactored, and new sections and a new chapter on testing have been added. If you already know JavaScript, this book will make your transition to CoffeeScript easy. If you\'re new to JavaScript, it\'s a great place to start.</p>
+
+<h5>New in this edition:</h5>
+
+<ul>
+<li>Automating setup with the Grunt task runner</li>
+<li>Using CoffeeScript classes with the Backbone framework</li>
+<li>Using CoffeeScript\'s simple callback syntax to interact with the Express framework</li>
+<li>A new chapter on client-side and server-side testing with Intern</li>
+<li>A new project that gives you hands-on experience with browser-side and server-side CoffeeScript</li>
+</ul>
+',
+      price: 24.06,
+      isbn: '1941222269',
+      amazon_id: '1941222269',
+      publisher: 'Pragmatic Bookshelf',
+  },
 ])
 puts("#{Book.count} book(s) have been created.")
