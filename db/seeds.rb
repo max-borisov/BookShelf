@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# ActiveRecord::Base.connection.execute("TRUNCATE books CASCADE")
 CartItem.destroy_all
 Review.destroy_all
 Book.destroy_all
