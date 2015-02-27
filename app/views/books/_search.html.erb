@@ -1,0 +1,23 @@
+<div class="row">
+  <form class="form-inline search-book-form">
+    <div class="form-group col-md-6">
+      <%= text_field_tag(:text, params[:text], class: 'form-control search-book-title') %>
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+    <div class="form-group col-md-6">
+      <label>Search book by:</label>
+      <label class="radio-inline">
+        <%= radio_button_tag(:search, 'title', search_book_checked_value('title')) %> Title
+      </label>
+      <label class="radio-inline">
+        <%= radio_button_tag(:search, 'author', search_book_checked_value('author')) %> Author
+      </label>
+      <label class="radio-inline">
+        <%= radio_button_tag(:search, 'isbn', search_book_checked_value('isbn')) %> ISBN
+      </label>
+      <label class="radio-inline">
+        <%= radio_button_tag(:search, 'amazon_id', search_book_checked_value('amazon_id')) %> Amazon id
+      </label>
+    </div>
+  </form>
+</div>

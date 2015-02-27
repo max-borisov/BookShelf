@@ -7,8 +7,13 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.order('created_at ASC').page(params[:page])
-    redirect_to books_path if @books.empty?
+    # @books = Book.order('created_at ASC').page(params[:page])
+    if has_search_params
+      @books = Book.search(params[:search], params[:text]).order('created_at ASC').page(params[:page])
+    else
+      @books = Book.order('created_at ASC').page(params[:page])
+      redirect_to books_path if @books.empty?
+    end
   end
 
   # GET /books/1
@@ -65,5 +70,9 @@ class BooksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:title, :author, :publisher, :pub_date, :description, :price, :isbn, :amazon_id)
+    end
+
+    def has_search_params
+      params[:search].present? && params[:text].present?
     end
 end
