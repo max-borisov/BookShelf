@@ -8,4 +8,7 @@ class Book < ActiveRecord::Base
   validates :amazon_id, length: { maximum: 50 }
   validates :isbn, :amazon_id, uniqueness: { message: 'is not unique' }
   validates :price, numericality: true
+
+  # For will_paginate component
+  self.per_page = 5
 end
