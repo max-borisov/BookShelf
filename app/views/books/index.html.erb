@@ -1,5 +1,16 @@
 <%= render 'shared/flash' %>
-<%= render 'search' %>
-<%= will_paginate %>
-<%= render @books %>
-<%= will_paginate %>
+<%= render 'search_book_form' %>
+<% unless @books.empty? %>
+    <div class="pull-left">
+        <%= will_paginate %>
+    </div>
+    <div class="pull-right book-count-block">
+        <p class="text-info"><%= pluralize(@books.count, 'book') %> in the catalog</p>
+    </div>
+    <div class="clearfix"></div>
+    <%= render @books %>
+    <%= will_paginate %>
+<% else %>
+    <%= render 'book_not_found' %>
+<% end %>
+

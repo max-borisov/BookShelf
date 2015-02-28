@@ -2,7 +2,7 @@ class Book < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
 
   # Case sensitive issue
-  scope :search, ->(search, text){ where('title LIKE ?', "%#{text}%") }
+  scope :search, ->(search, text){ where('title LIKE ?', "%#{text}%") if search.present? && text.present? }
 
   validates :title, :author, :publisher, :pub_date, :price, :isbn, :description, presence: true
   validates :title, :author, length: { maximum: 150 }

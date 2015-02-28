@@ -3,8 +3,8 @@
     <div class="form-group col-md-6">
       <%= text_field_tag(:text, params[:text], class: 'form-control search-book-title') %>
     </div>
-    <button type="submit" class="btn btn-default">Search</button>
-    <div class="form-group col-md-6">
+    <button type="submit" class="btn btn-primary">Search</button>
+    <div class="form-group col-md-6 book-search-by">
       <label>Search book by:</label>
       <label class="radio-inline">
         <%= radio_button_tag(:search, 'title', search_book_checked_value('title')) %> Title
@@ -18,6 +18,7 @@
       <label class="radio-inline">
         <%= radio_button_tag(:search, 'amazon_id', search_book_checked_value('amazon_id')) %> Amazon id
       </label>
+        <%= link_to 'Reset', root_url, class: 'radio-inline' %>
     </div>
   </form>
 </div>

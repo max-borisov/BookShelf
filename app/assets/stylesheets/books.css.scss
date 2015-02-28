@@ -48,5 +48,22 @@
 .search-book-form {
   .search-book-title {
     width: 100%;
+    font-size: 1.2em;
+  }
+  .book-search-by {
+    margin-top: 5px;
+    label {
+      margin-right: 5px;
+    }
+  }
+}
+.book-not-found-block {
+  font-size: 2em;
+  margin-top: 40px;
+}
+.book-count-block {
+  p {
+    margin-top: 35px;
+    font-size: 1.3em;
   }
 }

@@ -7,13 +7,18 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @books = Book.search(params[:search], params[:text]).order('created_at ASC').page(params[:page])
+    # redirect_to books_path if @books.empty?
+
     # @books = Book.order('created_at ASC').page(params[:page])
+=begin
     if has_search_params
       @books = Book.search(params[:search], params[:text]).order('created_at ASC').page(params[:page])
     else
       @books = Book.order('created_at ASC').page(params[:page])
       redirect_to books_path if @books.empty?
     end
+=end
   end
 
   # GET /books/1
