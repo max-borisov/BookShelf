@@ -16,7 +16,7 @@ Book.create!([
   <p>What You Need:Ruby 2.1, Rails 4</p>',
       price: 34.34,
       isbn: 1941222196,
-      amazon_id: '1941222196',
+      amazon_id: 1941222196,
       publisher: 'Pragmatic Bookshelf',
   },
   {
@@ -41,7 +41,7 @@ Filled with useful tasks to improve the maintainability of your applications</p>
   <p>You will learn how to use Yii\'s active record and CRUD scaffolding to manage the data in your database. Authentication, extensions, events and behaviors, and route management are just some of the many other features of Yii that you will learn from this book. By the end of this book, you will have a basic CRM application that is all set for service!</p>',
       price: 32.39,
       isbn: 1783981881,
-      amazon_id: '1783981881',
+      amazon_id: 1783981881,
       publisher: 'Packt Publishing',
   },
   {
@@ -64,7 +64,7 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
   <p>Whether you\'re a Ruby apprentice on the path to mastering the language or a Ruby wiz in search of new tips, this book is for you.</p>',
       price: 23.07,
       isbn: 1934356476,
-      amazon_id: '1934356476',
+      amazon_id: 1934356476,
       publisher: 'Pragmatic Bookshelf',
   },
   {
@@ -117,8 +117,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
   <p>Rails has evolved over the years, and this book has evolved along with it. We still start with a step-by-step walkthrough of building a real application, and in-depth chapters look at the built-in Rails features. This edition now gives new Ruby and Rails users more information on the Ruby language and takes more time to explain key concepts throughout. Best practices on how to apply Rails continue to change, and this edition keeps up. Examples use Concerns, Russian Doll caching, and Turbolinks, and the book focuses throughout on the right way to use Rails. Additionally, this edition now works on Ruby 2.0, a new release of Ruby with substantial functional and performance improvements.
   <p>This edition is for Rails4.0 and beyond.</p>",
       price: 29.74,
-      isbn: '1937785564',
-      amazon_id: '1937785564',
+      isbn: 1937785564,
+      amazon_id: 1937785564,
       publisher: 'Pragmatic Bookshelf',
   },
   {
@@ -131,8 +131,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 
   <p>Updated to include Ruby 1.9 and 2.0, the second edition includes recipes for the Rails framework and other projects involving Ruby. From data structures and algorithms to integration with cutting-edge technologies, Ruby Cookbook covers a wide range of programming topics for beginners and advanced Rubyists alike.</p>",
       price: 34.35,
-      isbn: '1449373712',
-      amazon_id: '1449373712',
+      isbn: 1449373712,
+      amazon_id: 1449373712,
       publisher: 'O\'Reilly Media',
   },
   {
@@ -164,8 +164,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
   <h5>Who this book is for</h5>
   <p>Beginning programmers, programmers new to Ruby, and web developers interested in knowing the foundations of the language.</p>",
       price: 27.78,
-      isbn: '1430223634',
-      amazon_id: '1430223634',
+      isbn: 1430223634,
+      amazon_id: 1430223634,
       publisher: 'Apress',
   },
   {
@@ -180,8 +180,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 
   <p>Purchase of the print book includes a free eBook in PDF, Kindle, and ePub formats from Manning Publications.</p>",
       price: 40.41,
-      isbn: '1617291099',
-      amazon_id: '1617291099',
+      isbn: 1617291099,
+      amazon_id: 1617291099,
       publisher: 'Manning Publications',
   },
   {
@@ -211,8 +211,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 <h5>About the Author</h5>
 <p>David A. Black is an internationally known Ruby developer, author, trainer, speaker, event organizer, and founder of Ruby Central, as well as a Lead Consultant at Cyrus Innovation.</p>",
       price: 32.10,
-      isbn: '1617291692',
-      amazon_id: '1617291692',
+      isbn: 1617291692,
+      amazon_id: 1617291692,
       publisher: 'Manning Publications',
   },
   {
@@ -234,8 +234,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 <li>Examine JavaScript’s bad parts—including features CoffeeScript was able to fix.</li>
 </ul>",
       price: 8.99,
-      isbn: '1449321054',
-      amazon_id: '1449321054',
+      isbn: 1449321054,
+      amazon_id: 1449321054,
       publisher: 'O\'Reilly Media',
   },
   {
@@ -258,8 +258,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
   <li>Learn how to use built-in replication features to replicate data</li>
   </ul>",
       price: 28.49,
-      isbn: '1449373194',
-      amazon_id: '1449373194',
+      isbn: 1449373194,
+      amazon_id: 1449373194,
       publisher: 'O\'Reilly Media',
   },
   {
@@ -314,8 +314,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 <li>Rich, interactive web effects</li>
 </ul>',
       price: 35.09,
-      isbn: '1491901888',
-      amazon_id: '1491901888',
+      isbn: 1491901888,
+      amazon_id: 1491901888,
       publisher: 'O\'Reilly Media',
   },
   {
@@ -339,8 +339,8 @@ Metaprogramming spells--34 practical recipes and idioms that you can study and a
 </ul>
 ',
       price: 24.06,
-      isbn: '1941222269',
-      amazon_id: '1941222269',
+      isbn: 1941222269,
+      amazon_id: 1941222269,
       publisher: 'Pragmatic Bookshelf',
   },
 ])

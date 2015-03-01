@@ -1,6 +1,6 @@
 class CartItemsController < ApplicationController
   def index
-    @cart_items = CartItem.joins(:book).where(user_id: current_user).order('created_at ASC')
+    @cart_items = CartItem.joins(:book).where(user_id: current_user).order(created_at: :asc)
   end
 
   def create
