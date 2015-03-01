@@ -5,7 +5,7 @@
   </div>
   <div class="col-md-8 book-info-block">
     <h2><%= link_to h(book.title), book_url, title: h(book.title) %></h2>
-    <h5>by <%= h(book.author) %>.</h5>
+    <h5>by <%= h(book.author) %></h5>
     <p><span>ISBN-10:</span> <%= book.isbn %></p>
     <p><span>Publisher:</span> <%= h(book.publisher) %></p>
     <p><span>Published:</span> <%= format_date(book.pub_date) %></p>

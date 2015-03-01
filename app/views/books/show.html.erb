@@ -18,7 +18,7 @@
   <div class="col-md-7 book-info-block">
     <h1><%= h(@book.title) %></h1>
     <p><strong>by <%= h(@book.author) %></strong></p>
-    <p><span>ISBN:</span> <%= @book.isbn %></p>
+    <p><span>ISBN-10:</span> <%= @book.isbn %></p>
     <p><span>Publisher:</span> <%= h(@book.publisher) %></p>
     <p><span>Published:</span> <%= format_date(@book.pub_date) %></p>
     <p><%= sanitize @book.description, tags: %w(p h5 ul li) %></p>
