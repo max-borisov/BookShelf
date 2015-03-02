@@ -7,6 +7,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    set_books_catalog_url
     @books = Book.search(params[:keywords]).order(created_at: :asc).page(params[:page])
   end
 
@@ -15,6 +16,7 @@ class BooksController < ApplicationController
   def show
     @reviews = @book.reviews.order(created_at: :asc)
     @review = Review.new
+    @back_button_url = back_to_books_catalog_url
   end
 
   # GET /books/new

@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
   def record_not_found
     redirect_to root_path, flash: { danger: 'Record not found.' }
   end
+
+  def set_books_catalog_url
+    session[:books_catalog_url] = request.url
+  end
+
+  def back_to_books_catalog_url
+    session[:books_catalog_url] || books_path
+  end
 end

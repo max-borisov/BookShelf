@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def index
+    set_books_catalog_url
     @orders = Order.where(user_id: current_user.id).order(created_at: :desc)
   end
 
