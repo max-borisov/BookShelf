@@ -5,17 +5,31 @@ class ReviewsController < ApplicationController
   def create
     @review = @book.reviews.build(review_params)
     @review.user_id = current_user.id
-    if @review.save
-      redirect_message = { success: 'New review has been added.' }
-    else
-      redirect_message = { danger: 'Review could not be saved.' }
+
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to book_path(@book), flash: {success: 'New review has been added.' } }
+        format.js   {}
+      else
+        format.html { redirect_to book_path(@book), flash: {danger: 'Review could not be saved.' } }
+        format.js   {}
+      end
     end
-    redirect_to book_path(@book), flash: redirect_message
   end
 
   def destroy
-    @book.reviews.where(user_id: current_user).destroy(params[:id])
-    redirect_to book_path(@book), flash: { success: 'Review has been deleted.' }
+    if current_user.admin?
+      @book.reviews.destroy(params[:id])
+    else
+      @book.reviews.where(user_id: current_user).destroy(params[:id])
+    end
+    respond_to do |format|
+      format.html { redirect_to book_path(@book), flash: { success: 'Review has been deleted.' } }
+      format.js   {}
+    # else
+      # format.html { redirect_to book_path(@book), flash: {danger: 'Review could not be saved.' } }
+      # format.js   {}
+    end
   end
 
   private

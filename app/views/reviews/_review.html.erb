@@ -1,6 +1,6 @@
 <div class="review-block">
   <% if logged_in? && (review_belongs_to_user?(review) || current_user.admin?) %>
-      <%= button_to book_review_path(@book, review), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger pull-right', title: 'Delete review' do %>
+      <%= button_to book_review_path(@book, review), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger pull-right', title: 'Delete review', remote: true do %>
           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
       <% end  %>
   <% end  %>
@@ -8,5 +8,5 @@
     By <span class="review-user-name"><%= review.user.name %></span> on <%= format_date review.created_at %>
   </p>
   <p class="review-text"><%= review.text %></p>
+  <hr>
 </div>
-<hr>
