@@ -1,7 +1,7 @@
 <% book_url = book_path(book) %>
 <div class="row">
   <div class="col-md-2 book-cover">
-    <%= link_to amazon_book_cover(book.amazon_id, h(book.title)), book_url, title: h(book.title) %>
+    <%= link_to book_cover(h(book.title), book.amazon_id), book_url, title: h(book.title) %>
   </div>
   <div class="col-md-8 book-info-block">
     <h2><%= link_to h(book.title), book_url, title: h(book.title) %></h2>

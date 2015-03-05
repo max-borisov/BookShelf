@@ -51,13 +51,16 @@ gem 'rails-html-sanitizer', '~> 1.0.1'
 gem 'bcrypt', '~> 3.1.9'
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.2.1'
+  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 group :production do
   gem 'rails_12factor'
   gem 'mandrill-api'
 end
+
+gem 'database_cleaner', '~> 1.4.0', group: :test
 
 # Use unicorn as the app server
 # gem 'unicorn'

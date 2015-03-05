@@ -4,7 +4,7 @@
   <%= render 'shared/flash' %>
   <div class="col-md-3 book-cover-lg">
     <p class="text-center">
-      <%= amazon_book_cover(@book.amazon_id, @book.title) %>
+      <%= book_cover(h(@book.title), @book.amazon_id) %>
     </p>
     <% if logged_in? && current_user.admin? %>
         <div class="pull-left">
