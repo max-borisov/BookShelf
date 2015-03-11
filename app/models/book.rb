@@ -19,5 +19,4 @@ class Book < ActiveRecord::Base
   def set_keywords
     self.keywords = [title, author, isbn, amazon_id].join(' ')
   end
-
 end

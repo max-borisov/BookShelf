@@ -4,9 +4,7 @@ class User < ActiveRecord::Base
   has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  # attr_accessor :current_password
-
-  before_save :downcase_email
+  before_save   :downcase_email
   before_create :create_activation_digest
 
   validates :name, presence: true, length: { maximum: 50 }
@@ -18,14 +16,6 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :password, length: { minimum: 5 }
-
-  # validate :active_password, on: :update
-
-=begin
-  def active_password
-    errors.add(:current_password, 'is not correct') unless BCrypt::Password.new(password_digest) == current_password
-  end
-=end
 
   # Activates an account
   def activate
@@ -89,7 +79,7 @@ class User < ActiveRecord::Base
     end
 
     def create_activation_digest
-      self.activation_token = User.new_token
-      self.activation_digest = User.digest(activation_token)
+      self.activation_token   = User.new_token
+      self.activation_digest  = User.digest(activation_token)
     end
 end

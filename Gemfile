@@ -39,7 +39,6 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 group :development do
   gem 'spring'
   # gem 'web-console', '~> 2.0'
-  gem 'awesome_print', '~> 1.6.1'
 end
 
 # gem 'mysql2', '~> 0.3.17'
@@ -51,8 +50,11 @@ gem 'rails-html-sanitizer', '~> 1.0.1'
 gem 'bcrypt', '~> 3.1.9'
 
 group :test, :development do
+  gem 'awesome_print', '~> 1.6.1'
   gem 'rspec-rails', '~> 3.2.1'
   gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'faker', '~> 1.4.3'
+  gem 'database_cleaner', '~> 1.4.0'
 end
 
 group :production do
@@ -60,7 +62,9 @@ group :production do
   gem 'mandrill-api'
 end
 
-gem 'database_cleaner', '~> 1.4.0', group: :test
+group :test do
+  # gem 'database_cleaner', '~> 1.4.0'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'

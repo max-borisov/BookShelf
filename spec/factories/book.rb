@@ -1,34 +1,12 @@
 FactoryGirl.define do
   factory :book do
-    review
-    title         'New title'
-    author        'New author'
-    publisher     'Pragmatic bookshelf'
-    pub_date      '2015-01-12'
-    price         '39.95'
-    isbn          '1234567890'
-    description   'Book description'
-
-    factory :book_ruby do
-      title         'Ruby guide'
-      author        'Author'
-      publisher     "O'Reilly"
-      pub_date      '2015-01-12'
-      price         '39.95'
-      isbn          '1234567891'
-      amazon_id     '123'
-      description   'Ruby book description'
-    end
-
-    factory :book_php do
-      title         'PHP guide'
-      author        'Author'
-      publisher     "O'Reilly"
-      pub_date      '2015-01-12'
-      price         '39.95'
-      isbn          '1234567892'
-      amazon_id     '456'
-      description   'PHP book description'
-    end
+    title         Faker::Name.title
+    author        Faker::Name.name
+    publisher     "O'Reilly"
+    pub_date      Faker::Date.backward(10)
+    price         39.95
+    sequence(:isbn) { |n| Faker::Number.number(7) + n.to_s }
+    sequence(:amazon_id) { |n| Faker::Number.number(6) + n.to_s }
+    description   Faker::Lorem.paragraph(2)
   end
 end

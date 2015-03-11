@@ -10,6 +10,6 @@ class Review < ActiveRecord::Base
 
   protected
     def sanitize_html
-      self.text = sanitize text, tags: ['"', "'"]
+      self.text = sanitize(text, tags: ['"', "'"])
     end
 end

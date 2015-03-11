@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Book, :type => :model do
 
-  context 'validate model attributes' do
+  context 'model validation' do
     before { @book = build(:book) }
 
     it 'is valid with a title, author, publisher, pub_date, price, isbn and description' do
@@ -73,32 +73,39 @@ describe Book, :type => :model do
 
   context 'search books by keywords' do
     before(:all) do
-      @book_default = create(:book)
-      @book_ruby    = create(:book_ruby)
-      @book_php     = create(:book_php)
-    end
-
-    after(:all) do
-      Book.destroy_all
+      @book_php   = create(:book, title: 'PHP guide')
+      @book_ruby  = create(:book, title: 'Ruby guide')
+      @book_js    = create(:book, title: 'JS guide')
     end
 
     context 'with matching title' do
       it 'returns an array of books that match' do
-        serach_result = Book.search('guide')
-        expect(serach_result).to eq([@book_ruby, @book_php])
+        search_result = Book.search('guide')
+        expect(search_result).to eq([@book_php, @book_ruby, @book_js])
       end
     end
 
     context 'with no matching keyword(title/isbn/author/etc)' do
       it 'returns an empty array, omits books that do not match' do
-        serach_result = Book.search('no match')
-        expect(serach_result).to eq([])
+        search_result = Book.search('no match')
+        expect(search_result).to eq([])
       end
     end
   end
 
-  xit 'has reviews relation' do
-
+  context 'with reviews' do
+    it 'it returns amount of book reviews' do
+      book = FactoryGirl.create(:book)
+      user = FactoryGirl.create(:user)
+      create_list(:review, 3, user: user, book: book)
+      expect(book.reviews.count).to eq(3)
+    end
   end
 
+  context 'with no reviews' do
+    it 'it returns an empty array' do
+      book = FactoryGirl.create(:book)
+      expect(book.reviews).to eq([])
+    end
+  end
 end
