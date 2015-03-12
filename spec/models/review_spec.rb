@@ -1,21 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe Review, :type => :model do
-  before { @review = build(:review) }
+  let(:review) { build(:review) }
 
-  context 'model validation' do
-    it 'is has a valid factory' do
-      expect(@review).to be_valid
+  describe 'model validation' do
+    context 'when model is valid' do
+      it 'is has a valid factory' do
+        expect(review).to be_valid
+      end
     end
 
-    it 'is invalid without a review text' do
-      validate_presence_of(@review, :text)
+    context 'when model is not valid' do
+      it 'is invalid without a review text' do
+        validate_presence_of(review, :text)
+      end
     end
   end
 
-  it 'sanitizes review text before save' do
-    @review[:text] = '<p>hello</p><a></a>test"'
-    @review.save
-    expect(@review[:text]).to eq('hellotest"')
+  describe '#sanitize_html' do
+    context 'when before_save is triggered' do
+      it 'sanitizes review text' do
+        review[:text] = '<p>hello</p><a></a>test"'
+        review.save
+        expect(review[:text]).to eq('hellotest"')
+      end
+    end
   end
 end

@@ -63,7 +63,7 @@ group :production do
 end
 
 group :test do
-  # gem 'database_cleaner', '~> 1.4.0'
+  gem 'fuubar', '~> 2.0.0'
 end
 
 # Use unicorn as the app server

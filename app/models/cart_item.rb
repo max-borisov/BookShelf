@@ -4,5 +4,4 @@ class CartItem < ActiveRecord::Base
 
   validates :user_id, :book_id, presence: true
   validates :user_id, :book_id, numericality: true
-
 end
