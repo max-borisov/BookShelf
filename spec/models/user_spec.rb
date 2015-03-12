@@ -196,4 +196,6 @@ describe User, :type => :model do
       end
     end
   end
+
+  xit 'orders relation'
 end
