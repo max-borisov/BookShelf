@@ -63,42 +63,118 @@ describe User, :type => :model do
     end
   end
 
-
-    xit 'sends an activation email' do
-
-    end
-
     context '#create_reset_digest' do
       it 'creates digest for password reset' do
-        
+        @user.save
+        @user.create_reset_digest
+        expect(@user[:reset_digest]).not_to be_empty
       end
     end
 
-    xit 'sends password reset email' do
+    context 'sends password reset email' do
 
+      it 'renders a correct subject' do
+        user = create(:user, password: '111111')
+        user.create_reset_digest
+        email = user.send_password_reset_email
+        expect(email.subject).to eq('Password reset')
+      end
+
+      it 'renders a correct from' do
+        user = create(:user, password: '111111')
+        user.create_reset_digest
+        email = user.send_password_reset_email
+        expect(email.from).to include('bookshelfnotifications@example.com')
+      end
+
+      it 'renders a correct to' do
+        user = create(:user, password: '111111')
+        user.create_reset_digest
+        email = user.send_password_reset_email
+        expect(email.to).to include(user[:email])
+      end
+    end
+  
+    context 'sends an activation email' do
+      it 'renders a correct subject' do
+        user = create(:user, password: '111111')
+        email = user.send_activation_email
+        expect(email.subject).to eq('Account activation')
+      end
+
+      it 'renders a correct from' do
+        user = create(:user, password: '111111')
+        email = user.send_activation_email
+        expect(email.from).to include('bookshelfnotifications@example.com')
+      end
+
+      it 'renders a correct to' do
+        user = create(:user, password: '111111')
+        email = user.send_activation_email
+        expect(email.to).to include(user[:email])
+      end
     end
 
-    it 'returns User.digest' do
-
+    context '#digest' do
+      it 'returns User.digest' do
+        expect(User.digest('11223344')).not_to be_empty
+      end
     end
 
-    it 'returns random token' do
+  context '#new_token' do
+    it 'generates a random URL-safe base64 string' do
+      expect(User.new_token).not_to be_empty
+    end
+  end
 
+    context '#remember' do
+      it 'creates remember digest' do
+        @user.save
+        @user.remember
+        expect(@user[:remember_digest]).not_to be_empty
+      end
     end
 
-    it 'creates remember digest' do
-
-    end
-
-    it 'tests authenticated? method' do
-
-    end
-
+  context '#forget' do
     it 'tests forget' do
+      @user.save
+      @user.forget
+      expect(@user[:remember_digest]).to be_nil
+    end
+  end
 
+  context '#authenticated?' do
+    it 'with remember_token' do
+      @user.save
+      @user.remember
+      expect(@user.authenticated?(:remember, @user.remember_token)).to eq(true)
+    end
+    it 'with reset_token' do
+      @user.save
+      @user.create_reset_digest
+      expect(@user.authenticated?(:reset, @user.reset_token)).to eq(true)
+    end
+    it 'with activation_token' do
+      @user.save
+      expect(@user.authenticated?(:activation, @user.activation_token)).to eq(true)
+    end
+    it 'returns false if digest is nil' do
+      @user.save
+      expect(@user.authenticated?(:activation, '')).to eq(false)
+    end
+  end
+
+  context '#password_reset_expired?' do
+    it 'returns false' do
+      @user.save
+      @user.create_reset_digest
+      expect(@user.password_reset_expired?).to eq(false)
     end
 
-    it 'tests password reset expired' do
-
+    it 'returns true' do
+      user = create(:user_with_expired_password_reset_digest)
+      expect(user.password_reset_expired?).to eq(true)
     end
+  end
+
 end

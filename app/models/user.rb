@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     update_attribute(:activated_at, Time.zone.now)
   end
 
-  # Sends activation email
+  # Sends an activation email
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
@@ -33,6 +33,11 @@ class User < ActiveRecord::Base
     self.reset_token = User.new_token
     update_attribute(:reset_digest, User.digest(reset_token))
     update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  # Returns true if a password reset token has expired.
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
 
   # Sends password reset email
@@ -66,11 +71,6 @@ class User < ActiveRecord::Base
 
   def forget
     update_attribute(:remember_digest, nil)
-  end
-
-  # Returns true if a password reset token has expired.
-  def password_reset_expired?
-    reset_sent_at < 2.hours.ago
   end
 
   private
