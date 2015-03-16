@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe Book, :type => :model do
 
-  describe 'model validation' do
-    let(:book) { build(:book) }
+  xit 'should respond to reviews'
+
+  describe 'validation' do
+    subject(:book) { build(:book) }
 
     context 'when model is valid' do
       it 'has a valid factory' do
@@ -105,11 +107,14 @@ describe Book, :type => :model do
 
   describe 'reviews relation' do
     context 'with reviews' do
+      before do
+        @book = FactoryGirl.create(:book)
+        @user = FactoryGirl.create(:user)
+        create_list(:review, 3, user: @user, book: @book)
+      end
+
       it 'returns amount of book reviews' do
-        book = FactoryGirl.create(:book)
-        user = FactoryGirl.create(:user)
-        create_list(:review, 3, user: user, book: book)
-        expect(book.reviews.count).to eq(3)
+        expect(@book.reviews.count).to eq(3)
       end
     end
 

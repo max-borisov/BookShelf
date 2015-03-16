@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe User, :type => :model do
-  describe 'model validation' do
-    let(:user) { build(:user, password: '111111') }
+  describe 'validation' do
+    subject(:user) { build(:user, password: '111111') }
+
     context 'when model is valid' do
       it 'has a valid factory' do
         expect(user).to be_valid
@@ -82,43 +83,43 @@ describe User, :type => :model do
   end
 
   describe '#send_password_reset_email' do
-    let(:user) { create(:user, password: '111111') }
+    subject(:user) { create(:user, password: '111111') }
+
+    before do
+      user.create_reset_digest
+      @email = user.send_password_reset_email
+    end
 
     it 'has a correct subject' do
-      user.create_reset_digest
-      email = user.send_password_reset_email
-      expect(email.subject).to eq('Password reset')
+      expect(@email.subject).to eq('Password reset')
     end
 
     it 'has a correct From:' do
-      user.create_reset_digest
-      email = user.send_password_reset_email
-      expect(email.from).to include('bookshelfnotifications@example.com')
+      expect(@email.from).to include('bookshelfnotifications@example.com')
     end
 
     it 'has a correct To:' do
-      user.create_reset_digest
-      email = user.send_password_reset_email
-      expect(email.to).to include(user[:email])
+      expect(@email.to).to include(user[:email])
     end
   end
 
   describe '#send_activation_email' do
-    let(:user) { create(:user, password: '111111') }
+    subject(:user) { create(:user, password: '111111') }
+
+    before do
+      @email = user.send_activation_email
+    end
 
     it 'has a correct subject' do
-      email = user.send_activation_email
-      expect(email.subject).to eq('Account activation')
+      expect(@email.subject).to eq('Account activation')
     end
 
     it 'has a correct From:' do
-      email = user.send_activation_email
-      expect(email.from).to include('bookshelfnotifications@example.com')
+      expect(@email.from).to include('bookshelfnotifications@example.com')
     end
 
     it 'has a correct To:' do
-      email = user.send_activation_email
-      expect(email.to).to include(user[:email])
+      expect(@email.to).to include(user[:email])
     end
   end
 
@@ -151,7 +152,7 @@ describe User, :type => :model do
   end
 
   describe '#authenticated?' do
-    let(:user) { create(:user) }
+    subject(:user) { create(:user) }
 
     context 'with remember_token' do
       it 'checks remember_token for authentication' do

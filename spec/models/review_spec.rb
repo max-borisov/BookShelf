@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Review, :type => :model do
-  let(:review) { build(:review) }
+  subject(:review) { build(:review) }
 
-  describe 'model validation' do
+  describe 'validation' do
     context 'when model is valid' do
       it 'is has a valid factory' do
         expect(review).to be_valid

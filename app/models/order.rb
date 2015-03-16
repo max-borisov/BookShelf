@@ -5,9 +5,8 @@ class Order < ActiveRecord::Base
   validates :total_price, numericality: true
   validates :user_id, numericality: { only_integer: true }
 
-  def save user
+  def save(user)
     cart = ShoppingCart.new(user)
     cart.checkout
   end
-
 end
