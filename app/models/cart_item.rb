@@ -4,4 +4,8 @@ class CartItem < ActiveRecord::Base
 
   validates :user_id, :book_id, presence: true
   validates :user_id, :book_id, numericality: true
+
+  def get_total_price
+
+  end
 end

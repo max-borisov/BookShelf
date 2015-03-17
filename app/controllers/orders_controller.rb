@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # todo Check there are items in the Shopping cart
     begin
       @order = Order.new
       @order.save current_user
