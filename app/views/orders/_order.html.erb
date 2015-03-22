@@ -1,5 +1,5 @@
 <hr>
-<% order_items = order.order_items %>
+<% order_items = order.order_items.includes(:book) %>
 <div class="row order-history-row">
     <div class="col-md-4 text-center">
       <p class="order-details"><%= number_to_currency order.total_price %></p>

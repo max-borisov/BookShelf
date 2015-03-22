@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 5 }
 
+  def self.get_orders(user)
+    Order.includes(:order_items).where(user_id: user.id).order(created_at: :desc)
+  end
+
   # Activates an account
   def activate
     update_attribute(:activated, true)

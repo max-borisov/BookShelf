@@ -199,4 +199,5 @@ describe User, :type => :model do
   end
 
   xit 'orders relation'
+  xit '#get_orders'
 end
