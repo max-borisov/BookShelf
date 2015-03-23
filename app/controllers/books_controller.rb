@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @reviews = @book.reviews.order(created_at: :asc)
+    @reviews = @book.reviews
     @review = Review.new
     @back_button_url = back_to_books_catalog_url
   end

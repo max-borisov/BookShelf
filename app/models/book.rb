@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, -> { order(created_at: :asc) }, dependent: :destroy
   before_save :set_keywords
 
   # For will_paginate component

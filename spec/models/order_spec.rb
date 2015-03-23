@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Order, :type => :model do
-  subject(:order) { build(:order) }
-
   describe 'validation' do
+    subject(:order) { build(:order) }
+
     context 'when model is valid' do
       it 'is has a valid attributes' do
         expect(order).to be_valid
@@ -36,6 +36,20 @@ RSpec.describe Order, :type => :model do
         order.valid?
         expect(order.errors[:total_price]).to include("is not a number")
       end
+    end
+  end
+
+  describe '#attach_books' do
+    subject(:order) { create(:order) }
+
+    before do
+      user = order.user
+      create_list(:cart_item, 3, user: user)
+      @books_ids = CartItem.get_books_ids(user)
+    end
+
+    it 'changes orders count from 0 to 1' do
+      expect{ order.attach_books(@books_ids) }.to change { order.order_items.count }.from(0).to(3)
     end
   end
 end

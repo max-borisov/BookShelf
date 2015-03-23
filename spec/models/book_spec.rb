@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 describe Book, :type => :model do
-
-  xit 'should respond to reviews'
-
   describe 'validation' do
     subject(:book) { build(:book) }
 

@@ -57,4 +57,32 @@ RSpec.describe CartItem, :type => :model do
       expect(CartItem.where(user_id: @user[:id])).not_to be_empty
     end
   end
+
+  describe 'class methods' do
+    before do
+      @user = create(:user)
+      create(:cart_item, user: @user, book: create(:book, id: 10, price: 10))
+      create(:cart_item, user: @user, book: create(:book, id: 20, price: 20))
+      create(:cart_item, user: @user, book: create(:book, id: 30, price: 30))
+    end
+
+    describe '.get_total_price' do
+      it 'returns a total price for books in shopping cart' do
+        expect(CartItem.get_total_price(@user)).to eq(60)
+      end
+    end
+
+    describe '.get_books_ids' do
+      it 'returns an array of books ids in the shopping cart' do
+        expect(CartItem.get_books_ids(@user)).to eq([10,20, 30])
+      end
+    end
+
+    describe '.destroy_items' do
+      it 'returns an empty array after delete' do
+        CartItem.destroy_books(@user)
+        expect(CartItem.get_books_ids(@user)).to be_empty
+      end
+    end
+  end
 end

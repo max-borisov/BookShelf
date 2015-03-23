@@ -5,7 +5,6 @@ class ReviewsController < ApplicationController
   def create
     @review = @book.reviews.build(review_params)
     @review.user_id = current_user.id
-
     respond_to do |format|
       if @review.save
         format.html { redirect_to book_path(@book), flash: {success: 'New review has been added.' } }

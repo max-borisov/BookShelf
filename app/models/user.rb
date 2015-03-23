@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
 
-  has_many :orders, dependent: :destroy
+  has_many :orders, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :cart_items, dependent: :destroy
 
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -16,10 +17,6 @@ class User < ActiveRecord::Base
   has_secure_password
 
   validates :password, length: { minimum: 5 }
-
-  def self.get_orders(user)
-    Order.includes(:order_items).where(user_id: user.id).order(created_at: :desc)
-  end
 
   # Activates an account
   def activate

@@ -10,10 +10,10 @@ class CartItem < ActiveRecord::Base
   end
 
   def self.get_books_ids(user)
-    CartItem.where(user_id: user).pluck(:book_id)
+    self.where(user_id: user).pluck(:book_id)
   end
 
-  def self.destroy_items(user, books_ids)
-    CartItem.where(user_id: user).destroy_all(book_id: books_ids)
+  def self.destroy_books(user)
+    self.destroy_all(user: user)
   end
 end
