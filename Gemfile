@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -49,10 +49,13 @@ gem 'rails-html-sanitizer', '~> 1.0.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.9'
 
+gem 'nokogiri', '~> 1.6.6.2'
+
 group :test, :development do
   gem 'awesome_print', '~> 1.6.1'
   gem 'rspec-rails', '~> 3.2.1'
   gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'capybara', '~> 2.4.4'
   gem 'faker', '~> 1.4.3'
   gem 'database_cleaner', '~> 1.4.0'
 end
@@ -64,7 +67,6 @@ end
 
 group :test do
   gem 'fuubar', '~> 2.0.0'
-  gem 'capybara', '~> 2.4.4'
   gem 'selenium-webdriver', '~> 2.45.0'
 end
 
