@@ -64,6 +64,8 @@ end
 
 group :test do
   gem 'fuubar', '~> 2.0.0'
+  gem 'capybara', '~> 2.4.4'
+  gem 'selenium-webdriver', '~> 2.45.0'
 end
 
 # Use unicorn as the app server
