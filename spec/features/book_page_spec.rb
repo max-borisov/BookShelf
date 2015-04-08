@@ -41,7 +41,8 @@ describe "book page", :type => :feature do
     context 'when it is a regular user' do
       # @todo log in
       it 'is possible delete only user related reviews' do
-        session[:user_id] = $tom[:id]
+        # session[:user_id] = $tom[:id]
+        login_as(@tom, :scope => :user)
         visit book_url(@book)
 
         expect(all('Delete review').count).to eq(2)
