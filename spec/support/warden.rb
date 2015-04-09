@@ -4,4 +4,5 @@ RSpec.configure do |config|
   config.before :suite do
     Warden.test_mode!
   end
-end=end
+end
+=end

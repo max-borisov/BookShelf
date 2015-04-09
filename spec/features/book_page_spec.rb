@@ -1,10 +1,13 @@
 require 'rails_helper'
 
+# @todo mix examples. Add example tags.
+
 describe "book page", :type => :feature do
   before(:all) do
     @book = create(:book)
     @tom = create(:user, email: 'tom@gmail.com')
     @bob = create(:user, email: 'bob@gmail.com')
+    @admin = create(:admin, email: 'admin@gmail.com')
     create_list(:review, 2, user: @tom, book: @book)
     create_list(:review, 1, user: @bob, book: @book)
   end
@@ -38,22 +41,45 @@ describe "book page", :type => :feature do
   end
 
   context 'when user is not guest' do
-    context 'when it is a regular user' do
-      # @todo log in
-      it 'is possible delete only user related reviews' do
-        # session[:user_id] = $tom[:id]
-        login_as(@tom, :scope => :user)
-        visit book_url(@book)
-
-        expect(all('Delete review').count).to eq(2)
-            # .to have_selector('.review-block')
+    context 'when it is a regular logged in user' do
+      it 'has interface to delete user related reviews' do
+        log_in_helper(@tom)
+        visit book_path(@book)
+        expect(all('button[title="Delete review"]').count).to be > 0
       end
 
-      xit 'add review'
+      it 'has interface to add review' do
+        log_in_helper(@bob)
+        visit book_path(@book)
+        expect(page).to have_selector('#new_review')
+      end
+
+      it 'increases reviews count after new one was added' do
+        log_in_helper(@bob)
+        visit book_path(@book)
+        review_text = 'New review.'
+        fill_in 'Add your review/opinion', :with => review_text
+        click_button 'Send'
+        expect(all('button[title="Delete review"]').count).to eq(2)
+      end
+
+      it 'decreases reviews count after one was deleted', :js => true do
+        log_in_helper(@tom)
+        visit book_path(@book)
+        accept_alert do
+          first("button[title='Delete review']").click
+        end
+        expect(all('button[title="Delete review"]').count).to eq(1)
+      end
     end
 
-    context 'when it is an admin' do
-      xit 'can delete any review'
+    context 'when user has admin privileges' do
+      it 'has interface to delete all reviews' do
+        log_in_helper(@admin)
+        visit book_path(@book)
+        reviews_count = Review.all.count
+        expect(all('button[title="Delete review"]').count).to eq(reviews_count)
+      end
     end
   end
 end
