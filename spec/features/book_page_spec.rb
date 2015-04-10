@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-# @todo mix examples. Add example tags.
-
 describe "book page", :type => :feature do
   before(:all) do
     @book = create(:book)
@@ -63,7 +61,7 @@ describe "book page", :type => :feature do
         expect(all('button[title="Delete review"]').count).to eq(2)
       end
 
-      it 'decreases reviews count after one was deleted', :js => true do
+      it 'decreases reviews count after one was deleted', js: true, browser: true do
         log_in_helper(@tom)
         visit book_path(@book)
         accept_alert do
