@@ -43,12 +43,12 @@ describe "sign in page", :type => :feature do
       expect(current_path).to eq(root_path)
     end
 
-    it 'sees "Action" link in the menu' do
+    it 'has "Action" link in the menu' do
       visit root_path
       expect(find('.dropdown')).to have_content('Actions')
     end
 
-    it 'sees user name on the navigation bar' do
+    it 'has user name on the navigation bar' do
       visit root_path
       expect(page).to have_selector('.nav-user-name')
     end
