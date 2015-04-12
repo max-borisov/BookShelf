@@ -41,19 +41,19 @@ describe "book page", :type => :feature do
   context 'when user is not guest' do
     context 'when it is a regular logged in user' do
       it 'has interface to delete user related reviews' do
-        log_in_helper(@tom)
+        log_in_as(@tom)
         visit book_path(@book)
         expect(all('button[title="Delete review"]').count).to be > 0
       end
 
       it 'has interface to add review' do
-        log_in_helper(@bob)
+        log_in_as(@bob)
         visit book_path(@book)
         expect(page).to have_selector('#new_review')
       end
 
       it 'increases reviews count after new one was added' do
-        log_in_helper(@bob)
+        log_in_as(@bob)
         visit book_path(@book)
         review_text = 'New review.'
         fill_in 'Add your review/opinion', :with => review_text
@@ -62,7 +62,7 @@ describe "book page", :type => :feature do
       end
 
       it 'decreases reviews count after one was deleted', js: true, browser: true do
-        log_in_helper(@tom)
+        log_in_as(@tom)
         visit book_path(@book)
         accept_alert do
           first("button[title='Delete review']").click
@@ -73,7 +73,7 @@ describe "book page", :type => :feature do
 
     context 'when user has admin privileges' do
       it 'has interface to delete all reviews' do
-        log_in_helper(@admin)
+        log_in_as(@admin)
         visit book_path(@book)
         reviews_count = Review.all.count
         expect(all('button[title="Delete review"]').count).to eq(reviews_count)

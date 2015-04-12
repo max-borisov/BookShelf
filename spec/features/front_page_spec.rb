@@ -9,7 +9,7 @@ describe "front page", :type => :feature do
   end
 
   before(:each) do
-    visit '/'
+    visit root_path
   end
 
   it "has page title and content" do

@@ -10,7 +10,7 @@ def validate_max_length_of(model, attribute, length)
   expect(model.errors[attribute][0]).to match(/too long/)
 end
 
-def log_in_helper(user)
+def log_in_as(user)
   visit signin_path
   fill_in 'Email', :with => user.email
   fill_in 'Password', :with => user.password
