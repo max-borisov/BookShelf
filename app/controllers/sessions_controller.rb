@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize, except: [:destroy]
+  before_filter :check_user, except: [:destroy]
 
   def new
   end
@@ -27,4 +28,9 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to :root
   end
+
+  private
+    def check_user
+      redirect_to root_path if logged_in?
+    end
 end
