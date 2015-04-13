@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 describe "front page", :type => :feature do
-  describe 'page content' do
-    before(:all) do
-      create(:book, title: 'ruby')
-      create(:book, title: 'ruby on rails')
-      create(:book, title: 'php')
-      create_list(:book, 13)
-    end
+  before(:all) do
+    create(:book, title: 'ruby')
+    create(:book, title: 'ruby on rails')
+    create(:book, title: 'php')
+    create_list(:book, 13)
+  end
 
+  describe 'common page content' do
     before(:each) do
       visit root_path
     end
@@ -74,32 +74,60 @@ describe "front page", :type => :feature do
         end
       end
     end
+
+    context 'when user is guest' do
+      it 'is not possible to add book to the shopping cart' do
+        expect(page).not_to have_selector('.add-to-cart-btn')
+      end
+    end
   end
 
-  describe 'nav bar links' do
-    context 'when user is logged in' do
-      before(:all) do
-        @user = create(:user)
-        log_in_as(@user)
-        visit root_path
-        @menu = find('.dropdown-menu')
-      end
+  describe 'page when user is logged in' do
+    before(:all) do
+      @user = create(:user)
+      log_in_as(@user)
+      visit root_path
+    end
 
+    describe 'nav bar links' do
       context 'when click on "Actions" link' do
+        before(:all) do
+          @menu_block = find('.dropdown-menu')
+        end
+
         it 'has "Profile" link' do
-          expect(@menu).to have_content('Profile')
+          expect(@menu_block).to have_content('Profile')
         end
 
         it 'has "Orders" link' do
-          expect(@menu).to have_content('Orders')
+          expect(@menu_block).to have_content('Orders')
         end
 
         it 'has "Update password" link' do
-          expect(@menu).to have_content('Profile')
+          expect(@menu_block).to have_content('Profile')
         end
 
         it 'has "Log out" link' do
-          expect(@menu).to have_content('Log out')
+          expect(@menu_block).to have_content('Log out')
+        end
+      end
+    end
+
+    describe 'add book to the shopping cart' do
+      before(:each) do
+        create_list(:book, 3)
+        visit root_path
+        first('.add-to-cart-btn').click
+      end
+
+      context 'when click on "Add to cart" button' do
+        xit 'shows successful message', js: true, browser: true do
+          expect(page).to have_content('book has been added to your shopping cart')
+        end
+
+        xit 'updates shopping cart badge in the nav bar' do
+          page.save_screenshot('/tmp/screenshot.png')
+          expect(find('span.badge').text).to eq('1')
         end
       end
     end
