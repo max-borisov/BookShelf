@@ -61,7 +61,7 @@ describe "book page", :type => :feature do
         expect(all('button[title="Delete review"]').count).to eq(2)
       end
 
-      it 'decreases reviews count after one was deleted', js: true, browser: true do
+      it 'decreases reviews count after one was deleted', js: true do
         log_in_as(@tom)
         visit book_path(@book)
         accept_alert do

@@ -121,7 +121,7 @@ describe "front page", :type => :feature do
       end
 
       context 'when click on "Add to cart" button' do
-        xit 'shows successful message', js: true, browser: true do
+        xit 'shows successful message', js: true do
           expect(page).to have_content('book has been added to your shopping cart')
         end
 
