@@ -6,18 +6,26 @@ class OrdersController < ApplicationController
 
   def create
     # @todo Add transaction
-    begin
+    # begin
+    
+    return
+
+    transaction do
       order = Order.create!(
           user_id: current_user.id,
           total_price: CartItem.get_total_price(current_user)
       )
+
+      raise 'ERROR'
+
       shopping_cart_books = CartItem.get_books_ids(current_user)
       order.attach_books(shopping_cart_books)
       CartItem.destroy_books(current_user)
+
     rescue => e
       # redirect_to cart_items_path, flash: { danger: e.message }
       redirect_to cart_items_path, flash: { danger: 'Checkout operation failed. Please, try again later.' }
-      return
+      # return
     end
     redirect_to orders_path
   end
